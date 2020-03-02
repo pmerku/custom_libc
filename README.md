@@ -67,7 +67,7 @@ Personal version of some c libraries
 ### ft_math.h
 - `ft_ceil`
 - `ft_floor`
-- `ft_pow`
+- `ft_pow` ok
 - `ft_sqrt`
 ### ft_ctype.h
 - `ft_isalnum` ok
@@ -81,29 +81,29 @@ Personal version of some c libraries
 - `ft_tolower` ok
 - `ft_toupper` ok
 ### ft_llist.h
-- `ft_llist_new`
-- `ft_llist_clear`
-- `ft_llist_free`
-- `ft_llist_iter`
-- `ft_llist_push`
-- `ft_llist_push_back`
-- `ft_llist_size`
-- `ft_lstmap`
+- `ft_llist_new` ok
+- `ft_llist_clear` ok
+- `ft_llist_free` ok
+- `ft_llist_iter` ok
+- `ft_llist_push_front` ok
+- `ft_llist_push_back` ok
+- `ft_llist_size` ok
+- `ft_lstlast` todo?
+- `ft_lstmap` todo?
+- `ft_llist_push_front` todo in asm
+- `ft_llist_size` todo in asm
+- `ft_llist_sort`
+- `ft_llist_remove_if`
 ### ft_dllist.h
-- `ft_dlstnew`
-- `ft_dlstadd_back`
-- `ft_dlstadd_front`
-- `ft_dlstclear`
-- `ft_dlstdelone`
-- `ft_dlstiter`
-- `ft_dlstlast`
-- `ft_dlstmap`
-- `ft_dlstsize`
-### ft_libasm.h
-- `ft_list_push_front`
-- `ft_list_size`
-- `ft_list_sort`
-- `ft_list_remove_if`
+- `ft_dllist_new`
+- `ft_dllist_push_back`
+- `ft_dllist_push_front`
+- `ft_dllist_clear`
+- `ft_dllist_free`
+- `ft_dllist_iter`
+- `ft_dllist_last`
+- `ft_dllist_map`
+- `ft_dllist_size`
 
 ## TODO:
 Documentation generator/extractor, man pages, Continuous integration, unit testing
