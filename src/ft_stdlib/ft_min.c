@@ -10,13 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STDLIB_H
-# define FT_STDLIB_H
-
-int		ft_atoi(const char *str);
-int		ft_abs(int n);
-double	ft_dabs(double n);
-int		ft_max(int a, int b);
-int		ft_min(int a, int b);
-
-#endif
+int		ft_min(int a, int b)
+{
+	return (a < b ? a : b);
+}

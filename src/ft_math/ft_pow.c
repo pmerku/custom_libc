@@ -10,13 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STDLIB_H
-# define FT_STDLIB_H
-
-int		ft_atoi(const char *str);
-int		ft_abs(int n);
-double	ft_dabs(double n);
-int		ft_max(int a, int b);
-int		ft_min(int a, int b);
-
-#endif
+double		ft_pow(double x, double n)
+{
+	while (n)
+	{
+		x *= x;
+		n--;
+	}
+	return (x);
+}

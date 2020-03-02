@@ -10,9 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
 #include <ft_memory.h>
 
-static int	count_words(const char *str, char delim)
+static int	count_words(const char *str, char delim, int max)
 {
 	int		n;
 	char	in_word;
@@ -30,16 +31,16 @@ static int	count_words(const char *str, char delim)
 			in_word = 0;
 		str++;
 	}
-	return (n);
+	return (n > max ? max : n);
 }
 
-static char	read_word(const char *str, char delim, char **arr, int n)
+static char	read_word(const char *str, char delim, char **arr, int last)
 {
 	char	*word;
 	size_t	len;
 
 	len = 0;
-	while (str[len] != '\0' && str[len] != delim)
+	while (str[len] != '\0' && (str[len] != delim || last))
 		len++;
 	word = ft_calloc(sizeof(char), (len + 1));
 	if (!word)
@@ -49,11 +50,11 @@ static char	read_word(const char *str, char delim, char **arr, int n)
 		word[len - 1] = str[len - 1];
 		len--;
 	}
-	arr[n] = word;
+	arr[0] = word;
 	return (1);
 }
 
-char		**ft_split(const char *str, char delim)
+char		**ft_nsplit(const char *str, char delim, int max)
 {
 	int		word_count;
 	int		n;
@@ -61,7 +62,7 @@ char		**ft_split(const char *str, char delim)
 
 	if (!str)
 		return (NULL);
-	word_count = count_words(str, delim);
+	word_count = count_words(str, delim, max);
 	arr = ft_calloc(sizeof(char *), (word_count + 1));
 	if (!arr)
 		return (NULL);
@@ -70,7 +71,7 @@ char		**ft_split(const char *str, char delim)
 	{
 		while (*str == delim && *str != '\0')
 			str++;
-		if (!read_word(str, delim, arr, n))
+		if (!read_word(str, delim, arr + n, n == max - 1))
 			return (ft_free_array(arr));
 		while (*str != delim && *str != '\0')
 			str++;

@@ -10,13 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STDLIB_H
-# define FT_STDLIB_H
+#include <ft_llist.h>
+#include <ft_memory.h>
 
-int		ft_atoi(const char *str);
-int		ft_abs(int n);
-double	ft_dabs(double n);
-int		ft_max(int a, int b);
-int		ft_min(int a, int b);
+void	ft_llist_push_front(t_llist *lst, void *data)
+{
+	t_llist_node *node;
 
-#endif
+	ft_nullcheck(lst);
+	node = ft_malloc(sizeof(t_llist_node));
+	node->data = data;
+	node->next = lst->head;
+	lst->head = node;
+}

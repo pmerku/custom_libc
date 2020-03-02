@@ -10,13 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STDLIB_H
-# define FT_STDLIB_H
+#include <stddef.h>
+#include <ft_llist.h>
 
-int		ft_atoi(const char *str);
-int		ft_abs(int n);
-double	ft_dabs(double n);
-int		ft_max(int a, int b);
-int		ft_min(int a, int b);
+void	ft_llist_iter(t_llist *lst, void (*f)(void *))
+{
+	t_llist_node *node;
 
-#endif
+	node = lst->head;
+	while (node != NULL)
+	{
+		f(node->data);
+		node = node->next;
+	}
+}
