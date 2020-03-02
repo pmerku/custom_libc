@@ -1,0 +1,20 @@
+# **************************************************************************** #
+#                                                                              #
+#    Makefile                                             ::::::::             #
+#    prmerku                                            :+:    :+:             #
+#    prmerku@student.codam.nl                          +:+                     #
+#                                                     +#+                      #
+#                                                    +#+                       #
+#    while (!(succeed = try()))                    #+#    #+#                  #
+#    Project: github_libc                          ########   odam.nl          #
+#                                                                              #
+# **************************************************************************** #
+
+DIR		= %%DIR_NAME%%
+
+SOURCES = %%SOURCE_FILES%%
+SOURCES := $(addprefix $(DIR)/,$(SOURCES))
+
+SRC 	+= $(SOURCES)
+
+HEADERS	+= %%HEADER_FILES%%

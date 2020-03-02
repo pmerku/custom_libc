@@ -11,8 +11,8 @@
 # **************************************************************************** #
 
 #Constants
-NAME = libft.a
-TEST = test
+NAME = %%NAME_EXEC%%
+TEST = %%NAME_TEST_EXEC%%
 
 #Colors
 RED				= \033[0;31m
@@ -43,28 +43,19 @@ else
 endif
 
 #Sources
-SRC_DIR			= src
-OUT_DIR			= out
-INC_DIR			= include
-
-SRC =
-HEADERS =
+SRC_DIR			= %%SRC_DIR%%
+OUT_DIR			= %%OUT_DIR%%
+INC_DIR			= %%INCLUDE_DIR%%
 
 #Sub-modules
-include	src/ft_ctype/ctype.mk
-include	src/ft_dllist/dllist.mk
-include	src/ft_libft/libft.mk
-include	src/ft_llist/llist.mk
-include	src/ft_math/math.mk
-include	src/ft_memory/memory.mk
-include	src/ft_stdio/stdio.mk
-include	src/ft_stdlib/stdlib.mk
-include	src/ft_string/string.mk
-include	src/ft_unistd/unistd.mk
+include	%%PATH_TO_SUBMK%%
+
+SRC				+= %%SRC_FILES%%
 
 OBJ				= $(patsubst %.c,%.o,$(SRC))
 OBJ				:= $(patsubst %.s,%.o,$(OBJ))
 
+HEADERS			= %%HEADER_FILES%%
 HEADERS			:= $(addprefix $(INC_DIR)/,$(HEADERS))
 
 ifdef WITH_BONUS
@@ -74,8 +65,8 @@ OBJ_FILES		= $(OBJ)
 endif
 
 #Test sources
-TESTS_DIR		= tests
-SRC_TESTS		= tests/main.c
+TESTS_DIR		= %%TESTS_DIR%%
+SRC_TESTS		= %%TESTS_FILES%%
 
 #Rules
 .PHONY: all clean fclean re bonus
