@@ -27,7 +27,7 @@ PREFIX			= $(BLUE)$(NAME) $(END)\xc2\xbb
 
 #Flags and defines
 CFLAGS			= -Wall -Wextra -Werror
-DFLAGS			= -03
+DFLAGS			= -O3
 NASM			= -f
 
 ifeq ($(OS),Windows_NT)
@@ -48,13 +48,44 @@ OUT_DIR			= out
 INC_DIR			= include
 
 SRC				= \
-				ft_string/ft_strlen.s \
-				ft_string/ft_memset.c \
-				ft_string/ft_memccpy.c \
-				ft_string/ft_memcpy.c \
-				ft_string/ft_memchr.c \
-				ft_string/ft_memcpm.c \
-				ft_string/ft_memmove.c
+				ft_ctype/ft_isalnum.c \
+				ft_ctype/ft_isalpha.c \
+				ft_ctype/ft_isascii.c \
+				ft_ctype/ft_isdigit.c \
+				ft_ctype/ft_islower.c \
+				ft_ctype/ft_isprint.c \
+				ft_ctype/ft_isspace.c \
+				ft_ctype/ft_isupper.c \
+				ft_ctype/ft_tolower.c \
+				ft_ctype/ft_toupper.c
+
+SRC				+=
+
+SRC				+= \
+				ft_libft/ft_intlen.c \
+				ft_libft/ft_intlen_base.c \
+				ft_libft/ft_itoa.c \
+				ft_libft/ft_itoa_base.c \
+				ft_libft/ft_nsplit.c \
+				ft_libft/ft_split.c \
+				ft_libft/ft_strempty.c \
+				ft_libft/ft_strip_chars.c \
+				ft_libft/ft_strjoin.c \
+				ft_libft/ft_strtrim.c \
+				ft_libft/ft_substr.c \
+				ft_libft/get_next_line.c
+
+SCR				+= \
+				ft_llist/ft_llist_clear.c \
+				ft_llist/ft_llist_free.c \
+				ft_llist/ft_llist_iter.c \
+				ft_llist/ft_llist_new.c \
+				ft_llist/ft_llist_push_front.c \
+				ft_llist/ft_llist_push_back.c \
+				ft_llist/ft_llist_size.c
+
+SRC				+= \
+				ft_math/ft_pow.c
 
 SRC				+= \
 				ft_memory/ft_bzero.c \
@@ -63,32 +94,37 @@ SRC				+= \
 				ft_memory/ft_free.c \
 				ft_memory/ft_free_array.c
 
-SRC				+= \
-				ft_ctype/ft_isdigit.c \
-				ft_ctype/ft_isspace.c \
-				ft_ctype/ft_isprint.c \
-				ft_ctype/ft_isascii.c \
-				ft_ctype/ft_isalnum.c \
-				ft_ctype/ft_isprint.c \
-				ft_ctype/ft_isupper.c \
-				ft_ctype/ft_islower.c \
-				ft_ctype/ft_tolower.c \
-				ft_ctype/ft_toupper.c
+SRC				+=
 
 SRC				+= \
-				ft_libft/ft_intlen.c \
-				ft_libft/ft_itoa.c \
-				ft_libft/ft_intlen_base.c \
-				ft_libft/ft_itoa_base.c \
-				ft_libft/ft_split.c
+				ft_stdlib/ft_abs.c \
+				ft_stdlib/ft_atoi.c \
+				ft_stdlib/ft_dabs.c \
+				ft_stdlib/ft_max.c \
+				ft_stdlib/ft_min.c
 
 SRC				+= \
-				ft_unistd/ft_read.s \
-				ft_unistd/ft_write.s \
+				ft_string/ft_memccpy.c \
+				ft_string/ft_memchr.c \
+				ft_string/ft_memcmp.c \
+				ft_string/ft_memcpy.c \
+				ft_string/ft_memmove.c \
+				ft_string/ft_memset.c \
+				ft_string/ft_strchr.c \
+				ft_string/ft_strdup.c \
+				ft_string/ft_strlen.s \
+				ft_string/ft_strncmp.c \
+				ft_string/ft_strnlen.c \
+				ft_string/ft_strnstr.c \
+				ft_string/ft_strrchr.c
+
+SRC				+= \
 				ft_unistd/ft_putchar_fd.c \
-				ft_unistd/ft_putstr_fd.c \
 				ft_unistd/ft_putendl_fd.c \
-				ft_unistd/ft_putnbr_fd.c
+				ft_unistd/ft_putnbr_fd.c \
+				ft_unistd/ft_putstr_fd.c \
+				ft_unistd/ft_read.s \
+				ft_unistd/ft_write.s
 
 OBJ				= $(patsubst %.c,%.o,$(SRC))
 OBJ				:= $(patsubst %.s,%.o,$(OBJ))

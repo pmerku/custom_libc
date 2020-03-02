@@ -7,7 +7,7 @@ Personal version of some c libraries
 - `ft_strcmp` todo | `ft_strncmp` ok
 - `ft_strcpy` | `ft_strncpy` | `ft_strlcpy`
 - `ft_strerror`
-- `ft_strlen` ok
+- `ft_strlen` ok | `ft_strnlen` ok
 - `ft_strpbrk`
 - `ft_strsep`
 - `ft_strspn` | `ft_strcspn`
@@ -19,7 +19,7 @@ Personal version of some c libraries
 - `ft_strrev`
 - `ft_strset`
 - `ft_strnset`
-- `ft_memcpy` ok
+- `ft_memcpy` ok | `ft_memccpy` ok
 - `ft_memset` ok
 - `ft_memmove` ok
 - `ft_memcmp` ok
@@ -30,12 +30,16 @@ Personal version of some c libraries
 - `ft_realloc`
 - `ft_free` ok
 - `ft_bzero` ok
+- `ft_free_array` ok
 ### ft_stdio.h
 - `ft_printf`
 - `ft_snprintf`
 - `ft_fprintf`
 - `ft_vsnprintf`
 ### ft_stdlib.h
+- `ft_abs` ok | `ft_dabs` ok
+- `ft_max` ok
+- `ft_min` ok
 - `ft_atoi` ok
 - `ft_atoi_base`
 - `ft_atol` | `ft_atoll`
@@ -43,17 +47,20 @@ Personal version of some c libraries
 ### ft_unistd.h
 - `ft_write` ok
 - `ft_read` ok
-- `ft_putchar` todo | `ft_putchar_fd` ok
-- `ft_putstr` todo | `ft_pustr_fd` ok
-- `ft_putnbr` todo | `ft_putnbr_fd` ok
-- `ft_putnbr_base` ok? | `ft_putnbr_fd_base`
+- `ft_putchar_fd` ok
+- `ft_pustr_fd` ok
+- `ft_putnbr_fd` ok
+- `ft_putnbr_fd_base`
 ### ft_libft.h
 - `get_next_line` ok
+- `ft_intlen` ok | `ft_intlen_base` ok
 - `ft_itoa` ok
 - `ft_ltoa` | `ft_lltoa`
 - `ft_itoa_base` ok
 - `ft_ltoa_base` | `ft_lltoa_base`
-- `ft_split` ok
+- `ft_split` ok | `ft_nsplit` ok
+- `ft_strempty` ok
+- `ft_strip_chars` ok
 - `ft_strjoin` ok
 - `ft_strtrim` ok
 - `ft_substr` ok
@@ -74,15 +81,14 @@ Personal version of some c libraries
 - `ft_tolower` ok
 - `ft_toupper` ok
 ### ft_llist.h
-- `ft_lstnew`
-- `ft_lstadd_back`
-- `ft_lstadd_front`
-- `ft_lstclear`
-- `ft_lstdelone`
-- `ft_lstiter`
-- `ft_lstlast`
+- `ft_llist_new`
+- `ft_llist_clear`
+- `ft_llist_free`
+- `ft_llist_iter`
+- `ft_llist_push`
+- `ft_llist_push_back`
+- `ft_llist_size`
 - `ft_lstmap`
-- `ft_lstsize`
 ### ft_dllist.h
 - `ft_dlstnew`
 - `ft_dlstadd_back`
@@ -100,4 +106,4 @@ Personal version of some c libraries
 - `ft_list_remove_if`
 
 ## TODO:
-Documentation generator/extractor, man pages, Continuous integration, unit testing, codam header
+Documentation generator/extractor, man pages, Continuous integration, unit testing

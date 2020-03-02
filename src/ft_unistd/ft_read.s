@@ -10,7 +10,7 @@
 ;                                                                              ;
 ; **************************************************************************** ;
 
-%include "macro.s"
+%include "macros.s"
 
 section .text
 	global FN_LABEL(ft_read)
