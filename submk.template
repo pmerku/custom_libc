@@ -1,20 +1,19 @@
 # **************************************************************************** #
 #                                                                              #
-#    Makefile                                             ::::::::             #
-#    prmerku                                            :+:    :+:             #
-#    prmerku@student.codam.nl                          +:+                     #
+#    Project: custom_libc                                 ::::::::             #
+#    Members: dvoort, prmerku                           :+:    :+:             #
+#    Copyright: 2020                                   +:+                     #
 #                                                     +#+                      #
 #                                                    +#+                       #
-#    while (!(succeed = try()))                    #+#    #+#                  #
-#    Project: github_libc                          ########   odam.nl          #
+#                                                   #+#    #+#                 #
+#    while (!(succeed = try()));                   ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-DIR		= %%DIR_NAME%%
+%%PREFIX%%_DIR		= %%DIR_NAME%%
 
-SOURCES = %%SOURCE_FILES%%
-SOURCES := $(addprefix $(DIR)/,$(SOURCES))
+%%PREFIX%%_SOURCES 	= %%SOURCE_FILES%%
+%%PREFIX%%_SOURCES 	:= $(addprefix $(%%PREFIX%%_DIR)/,$(%%PREFIX%%_SOURCES))
 
-SRC 	+= $(SOURCES)
-
+SRC 	+= $(%%PREFIX%%_SOURCES)
 HEADERS	+= %%HEADER_FILES%%

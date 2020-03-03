@@ -1,20 +1,19 @@
 # **************************************************************************** #
 #                                                                              #
-#    Makefile                                             ::::::::             #
-#    prmerku                                            :+:    :+:             #
-#    prmerku@student.codam.nl                          +:+                     #
+#    Project: custom_libc                                 ::::::::             #
+#    Members: dvoort, prmerku                           :+:    :+:             #
+#    Copyright: 2020                                   +:+                     #
 #                                                     +#+                      #
 #                                                    +#+                       #
-#    while (!(succeed = try()))                    #+#    #+#                  #
-#    Project: github_libc                          ########   odam.nl          #
+#                                                   #+#    #+#                 #
+#    while (!(succeed = try()));                   ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-DIR		= ft_dllist
+DLLIST_DIR		= ft_dllist
 
-SOURCES =
-SOURCES := $(addprefix $(DIR)/,$(SOURCES))
+DLLIST_SOURCES	=
+DLLIST_SOURCES	:= $(addprefix $(DLLIST_DIR)/,$(DLLIST_SOURCES))
 
-SRC 	+= $(SOURCES)
-
-HEADERS	+= ft_dllist.h
+SRC				+= $(DLLIST_SOURCES)
+HEADERS			+= ft_dllist.h

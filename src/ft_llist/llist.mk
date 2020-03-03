@@ -1,21 +1,21 @@
 # **************************************************************************** #
 #                                                                              #
-#    Makefile                                             ::::::::             #
-#    prmerku                                            :+:    :+:             #
-#    prmerku@student.codam.nl                          +:+                     #
+#    Project: custom_libc                                 ::::::::             #
+#    Members: dvoort, prmerku                           :+:    :+:             #
+#    Copyright: 2020                                   +:+                     #
 #                                                     +#+                      #
 #                                                    +#+                       #
-#    while (!(succeed = try()))                    #+#    #+#                  #
-#    Project: github_libc                          ########   odam.nl          #
+#                                                   #+#    #+#                 #
+#    while (!(succeed = try()));                   ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-DIR		= ft_llist
+LLIST_DIR		= ft_llist
 
-SOURCES = ft_llist_clear.c ft_llist_free.c ft_llist_iter.c ft_llist_new.c \
-		ft_llist_push_back.c ft_llist_push_front.c ft_llist_size.c
-SOURCES := $(addprefix $(DIR)/,$(SOURCES))
+LLIST_SOURCES = ft_llist_clear.c ft_llist_free.c ft_llist_iter.c \
+		ft_llist_new.c ft_llist_push_back.c ft_llist_push_front.c \
+		ft_llist_size.c
+LLIST_SOURCES := $(addprefix $(LLIST_DIR)/,$(LLIST_SOURCES))
 
-SRC 	+= $(SOURCES)
-
+SRC 	+= $(LLIST_SOURCES)
 HEADERS	+= ft_llist.h

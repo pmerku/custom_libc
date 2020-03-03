@@ -71,4 +71,7 @@ add_executable(github_libc
         src/ft_llist/ft_llist_new.c
         src/ft_llist/ft_llist_push_front.c
         src/ft_llist/ft_llist_push_back.c
-        src/ft_llist/ft_llist_size.c src/ft_math/ft_pow.c include/ft_math.h)
+        src/ft_llist/ft_llist_size.c
+        src/ft_math/ft_pow.c
+        include/ft_math.h
+        src/ft_string/ft_strnlen.c)

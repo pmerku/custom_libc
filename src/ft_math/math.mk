@@ -1,20 +1,19 @@
 # **************************************************************************** #
 #                                                                              #
-#    Makefile                                             ::::::::             #
-#    prmerku                                            :+:    :+:             #
-#    prmerku@student.codam.nl                          +:+                     #
+#    Project: custom_libc                                 ::::::::             #
+#    Members: dvoort, prmerku                           :+:    :+:             #
+#    Copyright: 2020                                   +:+                     #
 #                                                     +#+                      #
 #                                                    +#+                       #
-#    while (!(succeed = try()))                    #+#    #+#                  #
-#    Project: github_libc                          ########   odam.nl          #
+#                                                   #+#    #+#                 #
+#    while (!(succeed = try()));                   ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-DIR		= ft_math
+MATH_DIR		= ft_math
 
-SOURCES = ft_pow.c
-SOURCES := $(addprefix $(DIR)/,$(SOURCES))
+MATH_SOURCES 	= ft_pow.c
+MATH_SOURCES 	:= $(addprefix $(MATH_DIR)/,$(MATH_SOURCES))
 
-SRC 	+= $(SOURCES)
-
+SRC 	+= $(MATH_SOURCES)
 HEADERS	+= ft_math.h

@@ -1,7 +1,7 @@
 ; **************************************************************************** ;
 ;                                                                              ;
-;    Project: github_libc                                 ::::::::             ;
-;    Members: prmerku                                   :+:    :+:             ;
+;    Project: custom_libc                                 ::::::::             ;
+;    Members: dvoort, prmerku                           :+:    :+:             ;
 ;    Copyright: 2020                                   +:+                     ;
 ;                                                     +#+                      ;
 ;                                                    +#+                       ;

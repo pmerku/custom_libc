@@ -1,20 +1,19 @@
 # **************************************************************************** #
 #                                                                              #
-#    Makefile                                             ::::::::             #
-#    prmerku                                            :+:    :+:             #
-#    prmerku@student.codam.nl                          +:+                     #
+#    Project: custom_libc                                 ::::::::             #
+#    Members: dvoort, prmerku                           :+:    :+:             #
+#    Copyright: 2020                                   +:+                     #
 #                                                     +#+                      #
 #                                                    +#+                       #
-#    while (!(succeed = try()))                    #+#    #+#                  #
-#    Project: github_libc                          ########   odam.nl          #
+#                                                   #+#    #+#                 #
+#    while (!(succeed = try()));                   ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-DIR		= ft_stdio
+STDIO_DIR		= ft_stdio
 
-SOURCES =
-SOURCES := $(addprefix $(DIR)/,$(SOURCES))
+STDIO_SOURCES 	=
+STDIO_SOURCES 	:= $(addprefix $(STDIO_DIR)/,$(STDIO_SOURCES))
 
-SRC 	+= $(SOURCES)
-
+SRC 	+= $(STDIO_SOURCES)
 HEADERS	+= ft_stdio.h

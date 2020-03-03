@@ -1,20 +1,19 @@
 # **************************************************************************** #
 #                                                                              #
-#    Makefile                                             ::::::::             #
-#    prmerku                                            :+:    :+:             #
-#    prmerku@student.codam.nl                          +:+                     #
+#    Project: custom_libc                                 ::::::::             #
+#    Members: dvoort, prmerku                           :+:    :+:             #
+#    Copyright: 2020                                   +:+                     #
 #                                                     +#+                      #
 #                                                    +#+                       #
-#    while (!(succeed = try()))                    #+#    #+#                  #
-#    Project: github_libc                          ########   odam.nl          #
+#                                                   #+#    #+#                 #
+#    while (!(succeed = try()));                   ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-DIR		= ft_stdlib
+STDLIB_DIR		= ft_stdlib
 
-SOURCES = ft_abs.c ft_atoi.c ft_dabs.c ft_max.c ft_min.c
-SOURCES := $(addprefix $(DIR)/,$(SOURCES))
+STDLIB_SOURCES 	= ft_abs.c ft_atoi.c ft_dabs.c ft_max.c ft_min.c
+STDLIB_SOURCES 	:= $(addprefix $(STDLIB_DIR)/,$(STDLIB_SOURCES))
 
-SRC 	+= $(SOURCES)
-
+SRC 	+= $(STDLIB_SOURCES)
 HEADERS	+= ft_stdlib.h
