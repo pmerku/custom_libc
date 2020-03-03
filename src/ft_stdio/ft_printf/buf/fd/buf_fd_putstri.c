@@ -10,13 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_stdio/ft_printf.h>
-#include <ft_string.h>
+#include <ft_stdio/ft_printf_utils.h>
 
-int 	main(void)
+void	buf_fd_putstri(void *raw, char *s, size_t n)
 {
-	char	*s = "hello";
+	size_t		i;
 
-	ft_printf("%zu\n", ft_strlen(s));
-	return (0);
+	i = 0;
+	while (i < n && *s != '\0')
+	{
+		buf_fd_putchar(raw, *s);
+		s++;
+		i++;
+	}
 }

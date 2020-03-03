@@ -10,13 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_stdio/ft_printf.h>
-#include <ft_string.h>
+#include <ft_stdio/ft_printf_utils.h>
 
-int 	main(void)
+t_spec				spec_get(char spec)
 {
-	char	*s = "hello";
-
-	ft_printf("%zu\n", ft_strlen(s));
-	return (0);
+	if (spec == 's')
+		return (&spec_string);
+	else if (spec == 'd' || spec == 'i')
+		return (&spec_signed_int);
+	else if (spec == 'u')
+		return (&spec_unsigned_int);
+	else if (spec == 'o')
+		return (&spec_base);
+	else if (spec == 'x')
+		return (&spec_base);
+	else if (spec == 'X')
+		return (&spec_base);
+	else if (spec == 'p')
+		return (&spec_ptr);
+	if (spec == 'c')
+		return (&spec_char);
+	else if (spec == 'n')
+		return (&spec_charsprinted);
+	return (&spec_char);
 }

@@ -10,13 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_stdio/ft_printf.h>
 #include <ft_string.h>
 
-int 	main(void)
+static void		ft_ulltoa_inner(char *out, char *base, unsigned long long value,
+										int *i)
 {
-	char	*s = "hello";
+	unsigned long long base_size;
 
-	ft_printf("%zu\n", ft_strlen(s));
-	return (0);
+	base_size = (unsigned long long)ft_strlen(base);
+	if (value >= base_size)
+		ft_ulltoa_inner(out, base, value / base_size, i);
+	out[*i] = base[value % base_size];
+	(*i)++;
+}
+
+void			ft_ulltoa_base(char *out, char *base, unsigned long long value)
+{
+	int		i;
+
+	if (value == 0)
+	{
+		out[0] = base[0];
+		out[1] = '\0';
+		return ;
+	}
+	i = 0;
+	ft_ulltoa_inner(out, base, value, &i);
 }

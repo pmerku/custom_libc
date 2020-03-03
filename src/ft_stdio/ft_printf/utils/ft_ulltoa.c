@@ -10,13 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_stdio/ft_printf.h>
-#include <ft_string.h>
-
-int 	main(void)
+static void		ft_ulltoa_inner(char *out, unsigned long long value, int *i)
 {
-	char	*s = "hello";
+	if (value > 9)
+		ft_ulltoa_inner(out, value / 10, i);
+	out[*i] = '0' + (value % 10);
+	(*i)++;
+}
 
-	ft_printf("%zu\n", ft_strlen(s));
-	return (0);
+void			ft_ulltoa(char *out, unsigned long long value)
+{
+	int i;
+
+	if (value == 0)
+	{
+		out[0] = '0';
+		return ;
+	}
+	i = 0;
+	ft_ulltoa_inner(out, value, &i);
 }

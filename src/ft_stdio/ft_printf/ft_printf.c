@@ -10,13 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_stdio/ft_printf.h>
-#include <ft_string.h>
+#include <ft_stdio/ft_printf_utils.h>
 
-int 	main(void)
+int		ft_printf(const char *fmt, ...)
 {
-	char	*s = "hello";
+	va_list			args;
+	t_ft_printf		printf;
+	t_buf			buf;
+	t_buf_fd		fd_inner;
+	int				ret_val;
 
-	ft_printf("%zu\n", ft_strlen(s));
-	return (0);
+	buf_fd_create(&buf, &fd_inner, 1);
+	buf_reset(&buf);
+	printf.buf = &buf;
+	va_start(args, fmt);
+	printf.args = &args;
+	ret_val = ft_inner_printf(&printf, fmt);
+	va_end(args);
+	return (ret_val);
 }

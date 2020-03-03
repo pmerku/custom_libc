@@ -10,13 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_stdio/ft_printf.h>
-#include <ft_string.h>
+#include <ft_stdio/ft_printf_utils.h>
 
-int 	main(void)
+void	buf_str_putchar(void *raw, char c)
 {
-	char	*s = "hello";
+	t_buf_str *buf;
 
-	ft_printf("%zu\n", ft_strlen(s));
-	return (0);
+	buf = raw;
+	if (buf->offset < buf->buf_size)
+	{
+		buf->out[buf->offset] = c;
+		buf->offset++;
+	}
 }

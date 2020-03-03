@@ -10,13 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_stdio/ft_printf.h>
-#include <ft_string.h>
+#include <ft_stdio/ft_printf_utils.h>
 
-int 	main(void)
+int	buf_fd_chars_printed(void *buf)
 {
-	char	*s = "hello";
-
-	ft_printf("%zu\n", ft_strlen(s));
-	return (0);
+	return (((t_buf_fd *)buf)->printed);
 }

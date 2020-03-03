@@ -10,13 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_stdio/ft_printf.h>
-#include <ft_string.h>
-
-int 	main(void)
+int			ft_pf_atoi(char **str)
 {
-	char	*s = "hello";
+	long long	n;
+	int			mul;
 
-	ft_printf("%zu\n", ft_strlen(s));
-	return (0);
+	n = 0;
+	mul = 1;
+	if (**str == '+' || **str == '-')
+	{
+		mul = (**str == '-' ? -1 : 1);
+		(*str)++;
+	}
+	while (**str >= '0' && **str <= '9')
+	{
+		if (n * 10 < n)
+			return (mul == -1 ? 0 : -1);
+		n *= 10;
+		n += (**str - '0');
+		(*str)++;
+	}
+	return ((int)(mul * n));
 }

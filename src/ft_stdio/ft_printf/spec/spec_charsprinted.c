@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_stdio/ft_printf.h>
-#include <ft_string.h>
+#include <ft_stdio/ft_printf_utils.h>
 
-int 	main(void)
+void	spec_charsprinted(t_ft_printf *pf, t_ft_fmt *fmt)
 {
-	char	*s = "hello";
+	signed int *ptr;
 
-	ft_printf("%zu\n", ft_strlen(s));
-	return (0);
+	(void)fmt;
+	ptr = va_arg(*pf->args, signed int*);
+	*ptr = buf_chars_printed(pf->buf);
 }
