@@ -57,7 +57,7 @@ include src/ft_libft/libft.mk
 #include src/ft_llist/llist.mk		#TODO
 include src/ft_math/math.mk
 include src/ft_memory/memory.mk
-#include src/ft_stdio/stdio.mk		#TODO
+include src/ft_stdio/stdio.mk
 include src/ft_stdlib/stdlib.mk
 include src/ft_string/string.mk
 include src/ft_unistd/unistd.mk
@@ -94,7 +94,7 @@ clean:
 	@$(RM) -rf $(OUT_DIR)
 
 fclean: clean
-	@echo "$(PREFIX)$(RED)Removing file $(END)$(NAME)"
+	@echo "$(PREFIX)$(RED)Removing library $(END)$(NAME)"
 	@$(RM) -f $(NAME)
 
 re:
@@ -107,6 +107,6 @@ test: $(NAME)
 	@$(CC) $(CFLAGS) -o $(TEST) -I$(INC_DIR) $(SRC_TESTS) $(NAME)
 
 test_clean:
-	@echo "$(PREFIX)$(RED)Removing tests...$(END)$(NAME)"
+	@echo "$(PREFIX)$(RED)Removing tests... $(END)$(TEST)"
 	@$(RM) -f *.o
 	@$(RM) -f $(TEST)

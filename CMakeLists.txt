@@ -7,71 +7,23 @@ include_directories(include)
 
 add_executable(github_libc
         tests/main.c
+        include/ft_stdio/ft_printf.h
+        include/ft_stdio/ft_printf_utils.h
         include/ft_ctype.h
         include/ft_libft.h
         include/ft_memory.h
         include/ft_stdlib.h
         include/ft_string.h
         include/ft_unistd.h
-        src/ft_string/ft_strlen.s
-        src/ft_memory/ft_bzero.c
-        src/ft_string/ft_memset.c
-        src/ft_stdlib/ft_atoi.c
-        src/ft_ctype/ft_isspace.c
-        src/ft_ctype/ft_isdigit.c
-        src/ft_memory/ft_calloc.c
-        src/ft_memory/ft_malloc.c
-        src/ft_memory/ft_free.c
-        src/ft_ctype/ft_isalnum.c
-        src/ft_ctype/ft_isalpha.c
-        src/ft_ctype/ft_isascii.c
-        src/ft_ctype/ft_isprint.c
-        src/ft_ctype/ft_tolower.c
-        src/ft_ctype/ft_toupper.c
-        src/ft_ctype/ft_islower.c
-        src/ft_ctype/ft_isupper.c
-        src/ft_libft/ft_itoa.c
-        src/ft_libft/ft_intlen.c
-        src/ft_libft/ft_itoa_base.c
-        src/ft_libft/ft_intlen_base.c
-        src/ft_string/ft_memccpy.c
-        src/ft_string/ft_memchr.c
-        src/ft_string/ft_memcmp.c
-        src/ft_string/ft_memcpy.c
-        src/ft_string/ft_memmove.c
-        src/ft_unistd/ft_putchar_fd.c
-        src/ft_unistd/ft_putstr_fd.c
-        src/ft_unistd/ft_putendl_fd.c
-        src/ft_unistd/ft_putnbr_fd.c
-        src/ft_libft/ft_split.c
-        src/ft_memory/ft_free_array.c
-        src/ft_string/ft_strchr.c
-        src/ft_string/ft_strdup.c
-        src/ft_libft/ft_strjoin.c
-        src/ft_string/ft_strncmp.c
-        src/ft_string/ft_strnstr.c
-        src/ft_string/ft_strrchr.c
-        src/ft_libft/ft_strtrim.c
-        src/ft_libft/ft_strempty.c
-        src/ft_libft/ft_substr.c
-        src/ft_libft/get_next_line.c
-        src/ft_string/ft_strlen.s
-        src/ft_unistd/ft_write.s
-        src/ft_unistd/ft_read.s
-        src/ft_libft/ft_nsplit.c
-        src/ft_stdlib/ft_abs.c
-        src/ft_stdlib/ft_dabs.c
-        src/ft_stdlib/ft_max.c
-        src/ft_stdlib/ft_min.c
-        src/ft_libft/ft_strip_chars.c
+        src/ft_stdio/
+        src/ft_ctype/
+        src/ft_memory/
+        src/ft_string/
+        src/ft_unistd/
+        src/ft_stdlib/
+        src/ft_libft/
         include/ft_llist.h
-        src/ft_llist/ft_llist_clear.c
-        src/ft_llist/ft_llist_free.c
-        src/ft_llist/ft_llist_iter.c
-        src/ft_llist/ft_llist_new.c
-        src/ft_llist/ft_llist_push_front.c
-        src/ft_llist/ft_llist_push_back.c
-        src/ft_llist/ft_llist_size.c
-        src/ft_math/ft_pow.c
+        src/ft_llist/
+        src/ft_math/
         include/ft_math.h
-        src/ft_string/ft_strnlen.c)
+        )
