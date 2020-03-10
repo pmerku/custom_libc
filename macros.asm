@@ -1,6 +1,6 @@
 ; **************************************************************************** ;
 ;                                                                              ;
-;    Project: custom_libc                                 ::::::::             ;
+;    Project: minishell                                   ::::::::             ;
 ;    Members: dvoort, prmerku                           :+:    :+:             ;
 ;    Copyright: 2020                                   +:+                     ;
 ;                                                     +#+                      ;
@@ -10,16 +10,17 @@
 ;                                                                              ;
 ; **************************************************************************** ;
 
-%include "macros.s"
+%ifndef MACROS_S
+	%define SSE42_EQUAL_EACH 1000b
 
-section .text
-	global FN_LABEL(ft_write)
-
-FN_LABEL(ft_write):
-	mov		rax, SYS_WRITE
-	syscall
-	jnc		.return
-	mov		rax, -0x1
-
-.return:
-	ret
+	%ifidn __OUTPUT_FORMAT__, elf64
+		%define SYS_READ 3
+		%define SYS_WRITE 4
+		%define LABEL_PREFIX(prefix)
+	%elifidn __OUTPUT_FORMAT__, macho64
+		%define SYS_READ 0x2000003
+		%define SYS_WRITE 0x2000004
+		%define LABEL_PREFIX(prefix) _
+	%endif
+    %define FN_LABEL(name) LABEL_PREFIX(0)name
+%endif

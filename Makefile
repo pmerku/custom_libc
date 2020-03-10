@@ -63,7 +63,7 @@ include src/ft_string/string.mk
 include src/ft_unistd/unistd.mk
 
 OBJ				= $(patsubst %.c,%.o,$(SRC))
-OBJ				:= $(patsubst %.s,%.o,$(OBJ))
+OBJ				:= $(patsubst %.asm,%.o,$(OBJ))
 HEADERS			:= $(addprefix $(INC_DIR)/,$(HEADERS))
 
 #Test sources
@@ -84,7 +84,7 @@ $(OUT_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS)
 	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) $(DFLAGS) -I./$(INC_DIR) -c -o $@ $<
 
-$(OUT_DIR)/%.o: $(SRC_DIR)/%.s $(HEADERS)
+$(OUT_DIR)/%.o: $(SRC_DIR)/%.asm $(HEADERS)
 	@echo "$(PREFIX)$(GREEN)Compiling file $(END)$< $(GREEN)to $(END)$@"
 	@mkdir -p $(dir $@)
 	@nasm -f macho64 -o $@ $<

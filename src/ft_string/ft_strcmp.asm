@@ -10,20 +10,27 @@
 ;                                                                              ;
 ; **************************************************************************** ;
 
-%include "macros.s"
+%include "macros.asm"
 
 section .text
-	global FN_LABEL(ft_strlen)
+	global FN_LABEL(ft_strcmp)
 
-FN_LABEL(ft_strlen):
-	mov			rax,		-16
-	mov			rcx,		rdi
-	pxor		xmm0,		xmm0
+FN_LABEL(ft_strcmp):
+	xor		eax, eax
 
-strlen_loop:
-	add			rax,		16
-	pcmpistri	xmm0,		[rdi + rax],	SSE42_EQUAL_EACH
-	jnz			strlen_loop
+.loop:
+	cmp		byte [rdi], 0x0
+	jz		.return
+	mov		dl, byte [rdi]
+	cmp		byte [rsi], dl
+	jne		.return
 
-	add			rax,		rcx
+	inc		rdi
+	inc		rsi
+	jmp		.loop
+
+.return:
+	movzx	rax, byte [rdi]
+	movzx	rsi, byte [rsi]
+	sub		rax, rsi
 	ret

@@ -32,10 +32,12 @@ Personal version of some c libraries
 - `ft_bzero` ok
 - `ft_free_array` ok
 ### ft_stdio.h
-- `ft_printf`
-- `ft_snprintf`
-- `ft_fprintf`
-- `ft_vsnprintf`
+- `ft_printf` ok <- refactor
+- `ft_snprintf` ok <- refactor
+- `ft_fprintf` ok <- refactor
+- `ft_vprintf` ok <- refactor
+- `ft_eprintf` ok <- refactor
+- `ft_vfprintf` ok <- refactor
 ### ft_stdlib.h
 - `ft_abs` ok | `ft_dabs` ok
 - `ft_max` ok

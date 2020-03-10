@@ -10,16 +10,20 @@
 ;                                                                              ;
 ; **************************************************************************** ;
 
-%include "macros.s"
+%include "macros.asm"
 
 section .text
-	global FN_LABEL(ft_read)
+	global FN_LABEL(ft_strlen)
 
-FN_LABEL(ft_read):
-	mov		rax, SYS_READ
-	syscall
-	jnc		.return
-	mov		rax, -0x1
+FN_LABEL(ft_strlen):
+	mov			rax,		-16
+	mov			rcx,		rdi
+	pxor		xmm0,		xmm0
 
-.return:
+strlen_loop:
+	add			rax,		16
+	pcmpistri	xmm0,		[rdi + rax],	SSE42_EQUAL_EACH
+	jnz			strlen_loop
+
+	add			rax,		rcx
 	ret

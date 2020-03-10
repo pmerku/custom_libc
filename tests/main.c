@@ -12,11 +12,24 @@
 
 #include <ft_stdio/ft_printf.h>
 #include <ft_string.h>
+#include <stdlib.h>
+#include <ft_libft.h>
+#include <fcntl.h>
+#include <stdio.h>
 
 int 	main(void)
 {
-	char	*s = "hello";
+	int		fd0;
+	char	*line;
+	int		s0;
 
-	ft_printf("%zu\n", ft_strlen(s));
+	fd0 = open("tests/big.txt", O_RDONLY);
+	s0 = 1;
+	while (s0 > 0)
+	{
+		s0 = get_next_line(fd0, &line);
+		printf("%s\n", line);
+		free(line);
+	}
 	return (0);
 }
