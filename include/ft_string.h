@@ -30,6 +30,8 @@ int				ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t			ft_strnlen(const char *s, size_t n);
 char			*ft_strnstr(const char *haystack,
 				const char *needle, size_t len);
+void			ft_strarr_append(char ***arr, char *line);
+int				ft_strarr_size(char **arr);
 
 
 #endif

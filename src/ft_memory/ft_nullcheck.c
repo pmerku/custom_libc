@@ -10,18 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_MEMORY_H
-# define FT_MEMORY_H
+#include <stddef.h>
+#include <ft_stdio/ft_printf.h>
 
-# include <stddef.h>
-
-void	ft_bzero(void *s, size_t n);
-void	*ft_checked_malloc(size_t n);
-void	*ft_malloc(size_t n);
-void	*ft_checked_calloc(size_t count, size_t size);
-void	*ft_calloc(size_t count, size_t size);
-void	*ft_free(void *ptr);
-char	**ft_free_array(char **arr);
-void	*ft_nullcheck(void *data);
-
-#endif
+void	*ft_nullcheck(void *data)
+{
+	if (data == NULL)
+		ft_eprintf(1,
+				   "Error\nData null-check failed (got null, data expected)\n");
+	return (data);
+}

@@ -10,18 +10,33 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_MEMORY_H
-# define FT_MEMORY_H
+#include <ft_memory.h>
+#include <ft_string.h>
 
-# include <stddef.h>
+void			ft_strarr_append(char ***arr, char *line)
+{
+	char	**new_arr;
+	int		i;
 
-void	ft_bzero(void *s, size_t n);
-void	*ft_checked_malloc(size_t n);
-void	*ft_malloc(size_t n);
-void	*ft_checked_calloc(size_t count, size_t size);
-void	*ft_calloc(size_t count, size_t size);
-void	*ft_free(void *ptr);
-char	**ft_free_array(char **arr);
-void	*ft_nullcheck(void *data);
+	if (*arr == NULL)
+	{
+		*arr = ft_checked_calloc(2, sizeof(char *));
+		(*arr)[0] = line;
+		return ;
+	}
+	new_arr = ft_checked_calloc(ft_strarr_size(*arr) + 2, sizeof(char *));
+	if (new_arr != NULL)
+	{
+		i = 0;
+		while ((*arr)[i] != NULL)
+		{
+			new_arr[i] = (*arr)[i];
+			i++;
+		}
+		new_arr[i] = line;
+	}
+	ft_free(*arr);
+	*arr = new_arr;
+	return ;
+}
 
-#endif
