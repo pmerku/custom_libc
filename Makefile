@@ -54,7 +54,7 @@ HEADERS =
 include src/ft_ctype/ctype.mk
 #include src/ft_dllist/dllist.mk  	#TODO
 include src/ft_libft/libft.mk
-#include src/ft_llist/llist.mk		#TODO
+include src/ft_llist/llist.mk
 include src/ft_math/math.mk
 include src/ft_memory/memory.mk
 include src/ft_stdio/stdio.mk

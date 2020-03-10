@@ -12,7 +12,9 @@
 
 MATH_DIR		= ft_math
 
-MATH_SOURCES 	= ft_pow.c
+MATH_SOURCES 	= \
+	ft_pow.c
+
 MATH_SOURCES 	:= $(addprefix $(MATH_DIR)/,$(MATH_SOURCES))
 
 SRC 	+= $(MATH_SOURCES)

@@ -12,7 +12,9 @@
 
 %%PREFIX%%_DIR		= %%DIR_NAME%%
 
-%%PREFIX%%_SOURCES 	= %%SOURCE_FILES%%
+%%PREFIX%%_SOURCES 	= \
+	%%SOURCE_FILES%%
+
 %%PREFIX%%_SOURCES 	:= $(addprefix $(%%PREFIX%%_DIR)/,$(%%PREFIX%%_SOURCES))
 
 SRC 	+= $(%%PREFIX%%_SOURCES)

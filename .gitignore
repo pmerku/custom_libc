@@ -91,4 +91,5 @@ cmake-build-debug/CMakeFiles/src.dir/
 .idea/.name
 src/.DS_Store
 src/ft_stdio/.DS_Store
+cmake-build-debug/custom_libc.cbp
 
