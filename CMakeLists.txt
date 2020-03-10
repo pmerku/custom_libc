@@ -26,4 +26,4 @@ add_executable(github_libc
         src/ft_llist/
         src/ft_math/
         include/ft_math.h
-        src/ft_memory/ft_checked_calloc.c src/ft_memory/ft_checked_malloc.c src/ft_memory/ft_nullcheck.c src/ft_libft/ft_strarr_append.c src/ft_libft/ft_strarr_size.c)
+        )
