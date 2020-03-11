@@ -19,6 +19,8 @@
 #  define BUFFER_SIZE 128
 # endif
 
+# include <stddef.h>
+
 char	*ft_itoa(int n);
 int		ft_intlen(int n);
 char	*ft_itoa_base(int n, int base);
