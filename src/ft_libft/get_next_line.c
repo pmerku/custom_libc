@@ -26,7 +26,7 @@ static int	clean(int fd, char *store[fd], int x)
 	return (x);
 }
 
-static int	ft_read_line(int fd, char *store[fd])
+static int	ft_read_line(int fd, char **store) //TODO test this change
 {
 	char	*tmp;
 	char	buf[BUFFER_SIZE + 1];

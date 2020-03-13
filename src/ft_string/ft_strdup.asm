@@ -28,8 +28,13 @@ FN_LABEL(ft_strdup):
 	push	rdi
 	mov		rdi, rax
 
+    push    rbp
+	mov     rbp, rsp
+	and		rsp, -0x10
 	call	FN_LABEL(malloc)
 	jc		.return
+    mov     rsp, rbp
+    pop     rbp
 	pop		rdi
 
 	mov		rsi, rdi
