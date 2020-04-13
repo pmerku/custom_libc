@@ -13,15 +13,16 @@
 #Constants
 NAME = libft.a
 TEST = test
+CC = clang
 
 #Colors
-RED				= \033[0;31m
+RED			= \033[0;31m
 GREEN			= \033[0;32m
 YELLOW 			= \033[0;33m
 BLUE			= \033[0;34m
 MAGENTA			= \033[0;35m
 CYAN 			= \033[0;36m
-END				= \033[0;0m
+END			= \033[0;0m
 
 PREFIX			= $(BLUE)$(NAME) $(END)\xc2\xbb
 
@@ -62,12 +63,11 @@ include src/ft_stdlib/stdlib.mk
 include src/ft_string/string.mk
 include src/ft_unistd/unistd.mk
 
-OBJ				= $(patsubst %.c,%.o,$(SRC))
-OBJ				:= $(patsubst %.asm,%.o,$(OBJ))
+OBJ			= $(patsubst %.c,%.o,$(SRC))
+OBJ			:= $(patsubst %.asm,%.o,$(OBJ))
 HEADERS			:= $(addprefix $(INC_DIR)/,$(HEADERS))
 
 #Test sources
-TESTS_DIR		= tests
 SRC_TESTS		= tests/main.c
 
 #Rules
@@ -77,7 +77,7 @@ all: $(NAME)
 
 $(NAME): $(addprefix $(OUT_DIR)/,$(OBJ))
 	@echo "$(PREFIX)$(GREEN)Bundling objects...$(END)"
-	@ar rcs $@ $(addprefix $(OUT_DIR)/,$(OBJ))
+	@ar rcs $@ $^
 
 $(OUT_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS)
 	@echo "$(PREFIX)$(GREEN)Compiling file $(END)$< $(GREEN)to $(END)$@"
@@ -105,5 +105,5 @@ re:
 $(TEST): $(NAME)
 	@echo "$(PREFIX)$(GREEN)Bundling tests...$(END)"
 	@$(CC) $(CFLAGS) -o $(TEST) -I$(INC_DIR) $(SRC_TESTS) $(NAME)
-	@./test
-	@$(RM) test
+	@./$(TEST)
+	@$(RM) $(TEST)
