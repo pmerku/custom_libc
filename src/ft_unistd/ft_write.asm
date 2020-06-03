@@ -13,13 +13,13 @@
 %include "macros.asm"
 
 section .text
-	global FN_LABEL(ft_write)
+	global FN_LABEL(ft_write)		;function name
+	extern DEFINE_ERROR
 
 FN_LABEL(ft_write):
-	mov		rax, SYS_WRITE
-	syscall
-	jnc		.return
-	mov		rax, -0x1
+	mov		rax, SYS_WRITE			;mov syscall mask in default register
+	syscall							;call correct syscall with the mask provided
+	ERRNO_MACRO DEFINE_ERROR
 
 .return:
-	ret
+	ret								;return value
