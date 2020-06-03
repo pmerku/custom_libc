@@ -19,6 +19,10 @@
 #  define BUFFER_SIZE 128
 # endif
 
+# ifndef OPEN_MAX
+#  define OPEN_MAX 10400
+# endif
+
 # include <stddef.h>
 
 char	*ft_itoa(int n);

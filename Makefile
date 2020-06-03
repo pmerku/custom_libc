@@ -102,8 +102,7 @@ re:
 	@$(MAKE) all
 
 #Test rules
-$(TEST): $(NAME)
+$(TEST): $(SRC_TESTS) $(NAME)
 	@echo "$(PREFIX)$(GREEN)Bundling tests...$(END)"
-	@$(CC) $(CFLAGS) -o $(TEST) -I$(INC_DIR) $(SRC_TESTS) $(NAME)
+	@$(CC) $(CFLAGS) -o $(TEST) -I$(INC_DIR) $^
 	@./$(TEST)
-	@$(RM) $(TEST)

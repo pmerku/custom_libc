@@ -28,7 +28,7 @@ int 	main(void)
 	while (s0 > 0)
 	{
 		s0 = get_next_line(fd0, &line);
-		ft_printf("%s\n", line);
+		ft_printf("[%d][%d]=> [%s]\n", fd0, s0, line);
 		free(line);
 	}
 	char	*s = ft_malloc(8);
