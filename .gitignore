@@ -61,3 +61,4 @@ src/.DS_Store
 src/ft_stdio/.DS_Store
 cmake-build-debug
 cmake-build-wsl
+libft.a

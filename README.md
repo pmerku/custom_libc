@@ -4,8 +4,8 @@ Personal version of some c libraries
 - `ft_stpcpy`
 - `ft_strcat` | `ft_strncat` | `ft_strlcat`
 - `ft_strchr` ok | `ft_strrchr` ok
-- `ft_strcmp` todo | `ft_strncmp` ok
-- `ft_strcpy` | `ft_strncpy` | `ft_strlcpy`
+- `ft_strcmp` ok | `ft_strncmp` ok
+- `ft_strcpy` ok | `ft_strncpy` | `ft_strlcpy`
 - `ft_strerror`
 - `ft_strlen` ok | `ft_strnlen` ok
 - `ft_strpbrk`
@@ -46,13 +46,13 @@ Personal version of some c libraries
 - `ft_atoi_base`
 - `ft_atol` | `ft_atoll`
 - `ft_atol_base` | `ft_atoll_base`
+- `ft_exit`
 ### ft_unistd.h
 - `ft_write` ok
 - `ft_read` ok
 - `ft_putchar_fd` ok
 - `ft_pustr_fd` ok
-- `ft_putnbr_fd` ok
-- `ft_putnbr_fd_base`
+- `ft_putnbr_fd` ok | `ft_putnbr_fd_base`
 ### ft_libft.h
 - `get_next_line` ok
 - `ft_intlen` ok | `ft_intlen_base` ok
@@ -92,10 +92,10 @@ Personal version of some c libraries
 - `ft_llist_size` ok
 - `ft_lstlast` todo?
 - `ft_lstmap` todo?
-- `ft_llist_push_front` todo in asm
-- `ft_llist_size` todo in asm
-- `ft_llist_sort`
-- `ft_llist_remove_if`
+- `ft_llist_push_front` ok
+- `ft_llist_size` ok
+- `ft_llist_sort` ok
+- `ft_llist_remove_if` ok
 ### ft_dllist.h
 - `ft_dllist_new`
 - `ft_dllist_push_back`
@@ -106,6 +106,18 @@ Personal version of some c libraries
 - `ft_dllist_last`
 - `ft_dllist_map`
 - `ft_dllist_size`
+### ft_fcntl.h
+- `ft_open`
+- `ft_close`
+- `ft_fopen`
+- `ft_fclose`
+### ft_assert.h
+- `ft_assert`
+### ft_errno.h
+### ft_limits.h
+### ft_signal.h
+### ft_stdbool.h
+### ft_stddef.h
 
 ## TODO:
 Documentation generator/extractor, man pages, Continuous integration, unit testing
