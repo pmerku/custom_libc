@@ -1,5 +1,5 @@
 ## Custom_libc
-Personal version of some c libraries
+Personal version of some C/CPP libraries
 ### ft_string.h
 - `ft_stpcpy`
 - `ft_strcat` | `ft_strncat` | `ft_strlcat`
@@ -118,6 +118,7 @@ Personal version of some c libraries
 ### ft_signal.h
 ### ft_stdbool.h
 ### ft_stddef.h
+### MutantStack.hpp
 
 ## TODO:
 Documentation generator/extractor, man pages, Continuous integration, unit testing
