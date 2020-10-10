@@ -12,23 +12,15 @@
 
 #include <stddef.h>
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
-{
-	unsigned char		*d;
-	const unsigned char	*s;
-
-	if (n)
-	{
-		d = (unsigned char*)dst;
-		s = (const unsigned char*)src;
-		while (n)
-		{
-			*d = *s;
-			if (*d == (unsigned char)c)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n) {
+	if (n) {
+		unsigned char		*d = (unsigned char*)dst;
+		const unsigned char	*s = (const unsigned char*)src;
+		while (n--) {
+			*d++ = *s++;
+			if (*d == (unsigned char)c) { //TODO test this
 				return (d + 1);
-			d++;
-			s++;
-			n--;
+			}
 		}
 	}
 	return (NULL);

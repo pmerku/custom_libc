@@ -12,15 +12,10 @@
 
 #include <ft_stdio/ft_printf_utils.h>
 
-void	buf_str_putstr(void *raw, char *s)
-{
-	t_buf_str *buf;
-
-	buf = raw;
-	while (*s != '\0')
-	{
-		if (buf->offset < buf->buf_size)
-		{
+void	buf_str_putstr(void *raw, char *s) {
+	t_buf_str *buf = raw;
+	while (*s != '\0') {
+		if (buf->offset < buf->buf_size) {
 			buf->out[buf->offset] = *s;
 			buf->offset++;
 		}

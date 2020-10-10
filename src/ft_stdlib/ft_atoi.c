@@ -12,22 +12,17 @@
 
 #include <ft_ctype.h>
 
-int		ft_atoi(const char *str)
-{
-	long long	num;
-	int			prefix;
-
-	num = 0;
-	prefix = 1;
-	while (ft_isspace(*str))
+int		ft_atoi(const char *str) {
+	long long num = 0;
+	int prefix = 1;
+	while (ft_isspace(*str)) {
 		str++;
-	if (*str == '-' || *str == '+')
-	{
+	}
+	if (*str == '-' || *str == '+') {
 		prefix = (*str == '-') ? -1 : 1;
 		str++;
 	}
-	while (ft_isdigit(*str))
-	{
+	while (ft_isdigit(*str)) {
 		num = num * 10 + *str - '0';
 		str++;
 	}

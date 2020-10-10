@@ -12,11 +12,8 @@
 
 #include <ft_stdio/ft_printf_utils.h>
 
-void		buf_fd_reset(void *raw)
-{
-	t_buf_fd *buf;
-
-	buf = raw;
+void		buf_fd_reset(void *raw) {
+	t_buf_fd *buf = raw;
 	buf->offset = 0;
 	buf->printed = 0;
 	buf->total_written = 0;

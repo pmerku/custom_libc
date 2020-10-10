@@ -12,7 +12,6 @@
 
 #include <ft_stdio/ft_printf_utils.h>
 
-void	buf_reset(t_buf *buf)
-{
+void	buf_reset(t_buf *buf) {
 	buf->reset(buf->metadata);
 }

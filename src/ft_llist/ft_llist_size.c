@@ -13,15 +13,10 @@
 #include <stddef.h>
 #include <ft_llist.h>
 
-int		ft_llist_size(t_llist *lst)
-{
-	t_llist_node	*node;
-	int				i;
-
-	i = 0;
-	node = lst->head;
-	while (node != NULL)
-	{
+int		ft_llist_size(t_llist *lst) {
+	int i = 0;
+	t_llist_node *node = lst->head;
+	while (node != NULL) {
 		node = node->next;
 		i++;
 	}

@@ -13,10 +13,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-void	*ft_malloc(size_t n)
-{
-	void *data;
-
-	data = malloc(n);
+void	*ft_malloc(size_t n) {
+	void *data = malloc(n);
 	return (data);
 }

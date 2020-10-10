@@ -13,7 +13,6 @@
 #include <ft_string.h>
 #include <ft_unistd.h>
 
-void	ft_putstr_fd(char *s, int fd)
-{
+void	ft_putstr_fd(char *s, int fd) {
 	ft_write(fd, s, ft_strlen(s));
 }

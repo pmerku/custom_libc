@@ -12,7 +12,6 @@
 
 #include <ft_memory.h>
 
-char	*ft_strempty(void)
-{
+char	*ft_strempty(void) {
 	return (ft_calloc(1, 1));
 }

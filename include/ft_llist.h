@@ -19,14 +19,12 @@ extern "C" {
 /*
 ** Private struct - don't use.
 */
-typedef struct			s_llist_node
-{
+typedef struct			s_llist_node {
 	void				*data;
 	struct s_llist_node	*next;
 }						t_llist_node;
 
-typedef struct			s_llist
-{
+typedef struct			s_llist {
 	void				(*del_fn)(void *);
 	t_llist_node		*head;
 }						t_llist;

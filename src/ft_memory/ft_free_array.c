@@ -12,13 +12,9 @@
 
 #include <ft_memory.h>
 
-char	**ft_free_array(char **arr)
-{
-	int i;
-
-	i = 0;
-	while (arr[i] != NULL)
-	{
+char	**ft_free_array(char **arr) {
+	int i = 0;
+	while (arr[i] != NULL) {
 		ft_free(arr[i]);
 		i++;
 	}

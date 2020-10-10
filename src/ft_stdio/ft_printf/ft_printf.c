@@ -12,8 +12,7 @@
 
 #include <ft_stdio/ft_printf_utils.h>
 
-int		ft_printf(const char *fmt, ...)
-{
+int		ft_printf(const char *fmt, ...) {
 	va_list			args;
 	t_ft_printf		printf;
 	t_buf			buf;

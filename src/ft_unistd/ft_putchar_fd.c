@@ -12,7 +12,6 @@
 
 #include <ft_unistd.h>
 
-void	ft_putchar_fd(char c, int fd)
-{
+void	ft_putchar_fd(char c, int fd) {
 	ft_write(fd, &c, 1);
 }

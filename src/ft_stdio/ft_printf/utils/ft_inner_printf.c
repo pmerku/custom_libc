@@ -39,70 +39,57 @@ struct s_col_combo	combinations[] = {
 	{ '\0', ""}
 };
 
-static void			handle_spec(char **s, t_ft_printf *pf, t_ft_fmt *fmt)
-{
+static void			handle_spec(char **s, t_ft_printf *pf, t_ft_fmt *fmt) {
 	(*s)++;
 	fmt_read(s, pf->args, fmt);
 	fmt->orig_precision = fmt->precision;
-	if (fmt->precision < 0)
+	if (fmt->precision < 0) {
 		fmt->precision = 0;
+	}
 	spec_get(fmt->specifier)(pf, fmt);
 }
 
-static void			handle_color(char **s, t_ft_printf *printf)
-{
-	char	col;
-	char	*code;
-	int		i;
-
-	col = **s;
+static void			handle_color(char **s, t_ft_printf *printf) {
+	char col = **s;
 	(*s)++;
-	if (col == '&')
-	{
+	if (col == '&') {
 		buf_putchar(printf->buf, '&');
 		return ;
 	}
-	i = 0;
-	code = NULL;
-	while (combinations[i].key != '\0')
-	{
-		if (combinations[i].key == col)
+	int 	i = 0;
+	char	*code = NULL;
+	while (combinations[i].key != '\0') {
+		if (combinations[i].key == col) {
 			code = combinations[i].code;
+		}
 		i++;
 	}
-	if (code != NULL)
-	{
+	if (code != NULL) {
 		buf_putstr(printf->buf, "\033[");
 		buf_putstr(printf->buf, code);
 		buf_putchar(printf->buf, 'm');
 	}
 }
 
-static void			ft_do_printf(char **s, t_ft_printf *printf)
-{
+static void			ft_do_printf(char **s, t_ft_printf *printf) {
 	t_ft_fmt	fmt;
 
-	while (**s != '\0')
-	{
-		if (**s == '&')
-		{
+	while (**s != '\0') {
+		if (**s == '&') {
 			(*s)++;
 			handle_color(s, printf);
 		}
-		else if (**s == '%')
-		{
+		else if (**s == '%') {
 			handle_spec(s, printf, &fmt);
 		}
-		else
-		{
+		else {
 			buf_putchar(printf->buf, **s);
 			(*s)++;
 		}
 	}
 }
 
-int					ft_inner_printf(t_ft_printf *printf, const char *fmt)
-{
+int					ft_inner_printf(t_ft_printf *printf, const char *fmt) {
 	ft_do_printf((char **)&fmt, printf);
 	buf_flush(printf->buf);
 	return (buf_chars_printed(printf->buf));

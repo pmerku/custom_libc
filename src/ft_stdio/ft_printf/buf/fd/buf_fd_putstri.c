@@ -12,13 +12,9 @@
 
 #include <ft_stdio/ft_printf_utils.h>
 
-void	buf_fd_putstri(void *raw, char *s, size_t n)
-{
-	size_t		i;
-
-	i = 0;
-	while (i < n && *s != '\0')
-	{
+void	buf_fd_putstri(void *raw, char *s, size_t n) {
+	size_t	i = 0;
+	while (i < n && *s != '\0') {
 		buf_fd_putchar(raw, *s);
 		s++;
 		i++;

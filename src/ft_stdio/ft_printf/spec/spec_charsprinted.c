@@ -12,11 +12,8 @@
 
 #include <ft_stdio/ft_printf_utils.h>
 
-void	spec_charsprinted(t_ft_printf *pf, t_ft_fmt *fmt)
-{
-	signed int *ptr;
-
+void	spec_charsprinted(t_ft_printf *pf, t_ft_fmt *fmt) {
 	(void)fmt;
-	ptr = va_arg(*pf->args, signed int*);
+	signed int *ptr = va_arg(*pf->args, signed int*);
 	*ptr = buf_chars_printed(pf->buf);
 }

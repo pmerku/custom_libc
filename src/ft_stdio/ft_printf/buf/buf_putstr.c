@@ -12,7 +12,6 @@
 
 #include <ft_stdio/ft_printf_utils.h>
 
-void				buf_putstr(t_buf *buf, char *s)
-{
+void				buf_putstr(t_buf *buf, char *s) {
 	buf->putstr(buf->metadata, s);
 }

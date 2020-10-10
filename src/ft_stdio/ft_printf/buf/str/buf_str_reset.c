@@ -12,10 +12,7 @@
 
 #include <ft_stdio/ft_printf_utils.h>
 
-void		buf_str_reset(void *raw)
-{
-	t_buf_str *buf;
-
-	buf = raw;
+void		buf_str_reset(void *raw) {
+	t_buf_str *buf = raw;
 	buf->offset = 0;
 }

@@ -16,15 +16,12 @@
 
 void	ft_llist_free(t_llist **lst)
 {
-	t_llist_node *next;
-	t_llist_node *node;
-
-	if (*lst == NULL)
-		return ;
-	node = (*lst)->head;
-	while (node != NULL)
-	{
-		next = node->next;
+	if (*lst == NULL) {
+		return;
+	}
+	t_llist_node *node = (*lst)->head;
+	while (node != NULL) {
+		t_llist_node *next = node->next;
 		(*lst)->del_fn(node->data);
 		ft_free(node);
 		node = next;

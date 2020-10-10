@@ -12,17 +12,11 @@
 
 #include <stddef.h>
 
-char	*ft_strip_chars(char *str, char c)
-{
-	size_t src;
-	size_t pos;
-
-	src = 0;
-	pos = 0;
-	while (str[src] != '\0')
-	{
-		if (str[src] != c)
-		{
+char	*ft_strip_chars(char *str, char c) {
+	size_t src = 0;
+	size_t pos = 0;
+	while (str[src] != '\0') {
+		if (str[src] != c) {
 			str[pos] = str[src];
 			pos++;
 		}

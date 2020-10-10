@@ -12,13 +12,11 @@
 
 int		ft_intlen_base(int n, int base)
 {
-	int		len;
-
-	if (base < 2 || base > 16)
+	if (base < 2 || base > 16) {
 		return (0);
-	len = (n <= 0);
-	while (n)
-	{
+	}
+	int len = (n <= 0);
+	while (n) {
 		n /= base;
 		len++;
 	}

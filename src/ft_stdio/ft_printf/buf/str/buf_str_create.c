@@ -12,9 +12,7 @@
 
 #include <ft_stdio/ft_printf_utils.h>
 
-void				buf_str_create(t_buf *buf, t_buf_str *str_buf, char *str,
-		size_t buf_size)
-{
+void				buf_str_create(t_buf *buf, t_buf_str *str_buf, char *str, size_t buf_size) {
 	buf->metadata = str_buf;
 	str_buf->buf_size = buf_size;
 	str_buf->out = str;

@@ -13,19 +13,16 @@
 #include <stddef.h>
 #include <ft_string.h>
 
-char	*ft_strrchr(const char *s, int c)
-{
-	char	*ptr;
-	char	pos;
-
-	ptr = NULL;
-	if (c == '\0')
+char	*ft_strrchr(const char *s, int c) {
+	char *ptr = NULL;
+	if (c == '\0') {
 		return (ft_strchr(s, '\0'));
-	while (*s)
-	{
-		pos = *s;
-		if (c == pos)
-			ptr = (char*)s;
+	}
+	while (*s) {
+		char pos = *s;
+		if (c == pos) {
+			ptr = (char *) s;
+		}
 		s++;
 	}
 	return (ptr);

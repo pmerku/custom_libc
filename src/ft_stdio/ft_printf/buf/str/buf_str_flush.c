@@ -12,7 +12,6 @@
 
 #include <ft_stdio/ft_printf_utils.h>
 
-void	buf_str_flush(void *raw)
-{
+void	buf_str_flush(void *raw) {
 	(void)raw;
 }

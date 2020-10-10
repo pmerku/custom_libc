@@ -12,13 +12,9 @@
 
 #include <stddef.h>
 
-size_t	ft_strnlen(const char *s, size_t n)
-{
-	size_t	len;
-
-	len = 0;
-	while (len < n)
-	{
+size_t	ft_strnlen(const char *s, size_t n) {
+	size_t	len = 0;
+	while (len < n) {
 		if (!*s)
 			break ;
 		len++;

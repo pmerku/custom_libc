@@ -13,10 +13,9 @@
 #include <stddef.h>
 #include <ft_stdio/ft_printf.h>
 
-void	*ft_nullcheck(void *data)
-{
-	if (data == NULL)
-		ft_eprintf(1,
-				   "Error\nData null-check failed (got null, data expected)\n");
+void	*ft_nullcheck(void *data) {
+	if (data == NULL) {
+		ft_eprintf(1, "Error\nData null-check failed (got null, data expected)\n");
+	}
 	return (data);
 }

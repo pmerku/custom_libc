@@ -12,7 +12,6 @@
 
 #include <ft_stdio/ft_printf_utils.h>
 
-void				buf_putstri(t_buf *buf, char *s, size_t n)
-{
+void				buf_putstri(t_buf *buf, char *s, size_t n) {
 	buf->putstri(buf->metadata, s, n);
 }

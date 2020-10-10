@@ -19,8 +19,7 @@ extern "C" {
 # include <stddef.h>
 # include <stdarg.h>
 
-enum				e_length
-{
+enum				e_length {
 	none,
 	hh,
 	h,
@@ -32,8 +31,7 @@ enum				e_length
 	q,
 };
 
-typedef struct		s_buf_fd
-{
+typedef struct		s_buf_fd {
 	int				fd;
 	size_t			printed;
 	size_t			offset;
@@ -42,15 +40,13 @@ typedef struct		s_buf_fd
 	size_t			total_written;
 }					t_buf_fd;
 
-typedef struct		s_buf_str
-{
+typedef struct		s_buf_str {
 	size_t			offset;
 	char			*out;
 	size_t			buf_size;
 }					t_buf_str;
 
-struct				s_col_combo
-{
+struct				s_col_combo {
 	char			key;
 	char			*code;
 };
@@ -63,8 +59,7 @@ typedef void		(*t_buf_flush)(void *buf);
 typedef void		(*t_buf_putchars)(void *buf, char c, size_t n);
 typedef int			(*t_buf_cprinted)(void *buf);
 
-typedef struct		s_buf
-{
+typedef struct		s_buf {
 	void			*metadata;
 	t_buf_reset		reset;
 	t_buf_putstr	putstr;
@@ -75,8 +70,7 @@ typedef struct		s_buf
 	t_buf_cprinted	chars_printed;
 }					t_buf;
 
-typedef struct		s_ft_fmt
-{
+typedef struct		s_ft_fmt {
 	char			specifier;
 	char			left_justify;
 	char			force_nbr_sign;
@@ -90,8 +84,7 @@ typedef struct		s_ft_fmt
 	enum e_length	length;
 }					t_ft_fmt;
 
-typedef struct		s_ft_printf
-{
+typedef struct		s_ft_printf {
 	t_buf			*buf;
 	va_list			*args;
 }					t_ft_printf;
@@ -130,7 +123,7 @@ int					buf_fd_chars_printed(void *buf);
 ** String buffer implementation
 */
 void				buf_str_create(t_buf *buf, t_buf_str *str_buf, char *str,
-		size_t buf_size);
+					size_t buf_size);
 void				buf_str_reset(void *buf);
 void				buf_str_putstr(void *buf, char *s);
 void				buf_str_putstri(void *buf, char *s, size_t n);
@@ -164,7 +157,7 @@ int					ft_pf_atoi(char **str);
 char				ft_lltoa(char *out, long long value);
 void				ft_ulltoa(char *out, unsigned long long value);
 void				ft_ulltoa_base(char *out, char *base,
-									unsigned long long value);
+					unsigned long long value);
 
 #endif
 #ifdef __cplusplus

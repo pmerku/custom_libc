@@ -12,8 +12,7 @@
 
 #include <ft_stdio/ft_printf_utils.h>
 
-void				buf_fd_create(t_buf *buf, t_buf_fd *fd_buf, int fd)
-{
+void				buf_fd_create(t_buf *buf, t_buf_fd *fd_buf, int fd) {
 	buf->metadata = fd_buf;
 	fd_buf->fd = fd;
 	buf->reset = &buf_fd_reset;

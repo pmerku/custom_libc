@@ -10,10 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-double		ft_pow(double x, double n)
-{
-	while (n)
-	{
+double		ft_pow(double x, double n) {
+	while (n) {
 		x *= x;
 		n--;
 	}

@@ -12,7 +12,6 @@
 
 #include <ft_stdio/ft_printf_utils.h>
 
-int	buf_fd_chars_printed(void *buf)
-{
+int	buf_fd_chars_printed(void *buf) {
 	return (((t_buf_fd *)buf)->printed);
 }
