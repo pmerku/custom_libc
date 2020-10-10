@@ -11,24 +11,25 @@
 # **************************************************************************** #
 
 #Constants
-NAME = libft.a
-TEST = test
-CC = clang
+NAME 	= libft.a
+TEST 	= test
+CC 		= clang
+CC++	= clang++
 
 #Colors
-RED			= \033[0;31m
+RED				= \033[0;31m
 GREEN			= \033[0;32m
 YELLOW 			= \033[0;33m
 BLUE			= \033[0;34m
 MAGENTA			= \033[0;35m
 CYAN 			= \033[0;36m
-END			= \033[0;0m
+END				= \033[0;0m
 
 PREFIX			= $(BLUE)$(NAME) $(END)\xc2\xbb
 
 #Flags and defines
 CFLAGS			= -Wall -Wextra -Werror
-DFLAGS			= -O3
+DFLAGS			= -O3 -g
 NASM			= -f
 
 ifeq ($(OS),Windows_NT)
@@ -63,12 +64,13 @@ include src/ft_stdlib/stdlib.mk
 include src/ft_string/string.mk
 include src/ft_unistd/unistd.mk
 
-OBJ			= $(patsubst %.c,%.o,$(SRC))
-OBJ			:= $(patsubst %.asm,%.o,$(OBJ))
+OBJ				= $(patsubst %.c,%.o,$(SRC))
+OBJ				:= $(patsubst %.cpp,%.o,$(OBJ))
+OBJ				:= $(patsubst %.asm,%.o,$(OBJ))
 HEADERS			:= $(addprefix $(INC_DIR)/,$(HEADERS))
 
 #Test sources
-SRC_TESTS		= tests/main.c
+SRC_TESTS		= tests/main.cpp
 
 #Rules
 .PHONY: all clean fclean re bonus
@@ -84,6 +86,11 @@ $(OUT_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS)
 	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) $(DFLAGS) -I./$(INC_DIR) -c -o $@ $<
 
+$(OUT_DIR)/%.o: $(SRC_DIR)/%.cpp $(HEADERS)
+	@echo "$(PREFIX)$(GREEN)Compiling file $(END)$< $(GREEN)to $(END)$@"
+	@mkdir -p $(dir $@)
+	@$(CC++) $(CFLAGS) $(DFLAGS) -I./$(INC_DIR) -c -o $@ $<
+
 $(OUT_DIR)/%.o: $(SRC_DIR)/%.asm $(HEADERS)
 	@echo "$(PREFIX)$(GREEN)Compiling file $(END)$< $(GREEN)to $(END)$@"
 	@mkdir -p $(dir $@)
@@ -95,7 +102,7 @@ clean:
 
 fclean: clean
 	@echo "$(PREFIX)$(RED)Removing library $(END)$(NAME)"
-	@$(RM) -f $(NAME)
+	@$(RM) -f $(NAME) $(TEST)
 
 re:
 	@$(MAKE) fclean
@@ -104,5 +111,7 @@ re:
 #Test rules
 $(TEST): $(SRC_TESTS) $(NAME)
 	@echo "$(PREFIX)$(GREEN)Bundling tests...$(END)"
-	@$(CC) $(CFLAGS) -o $(TEST) -I$(INC_DIR) $^
-	@./$(TEST)
+	@$(CC++) $(CFLAGS) -o $(TEST) -I./$(INC_DIR) $(SRC_TESTS) -L. -lft
+
+run: $(TEST)
+	./test
