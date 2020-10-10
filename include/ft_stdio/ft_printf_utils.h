@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 #ifndef PRINTF_UTILS_H
 # define PRINTF_UTILS_H
 
@@ -163,4 +166,7 @@ void				ft_ulltoa(char *out, unsigned long long value);
 void				ft_ulltoa_base(char *out, char *base,
 									unsigned long long value);
 
+#endif
+#ifdef __cplusplus
+}
 #endif

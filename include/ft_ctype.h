@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 #ifndef FT_CTYPE_H
 # define FT_CTYPE_H
 
@@ -24,4 +27,7 @@ int		ft_toupper(int c);
 int 	ft_islower(int c);
 int 	ft_isupper(int c);
 
+#endif
+#ifdef __cplusplus
+}
 #endif

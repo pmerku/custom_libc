@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 #ifndef FT_STRING_H
 # define FT_STRING_H
 
@@ -35,5 +38,7 @@ char			*ft_strnstr(const char *haystack, const char *needle, size_t n);
 void			ft_strarr_append(char ***arr, char *line);
 int				ft_strarr_size(char **arr);
 
-
+#endif
+#ifdef __cplusplus
+}
 #endif

@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 #ifndef FT_LIBFT_H
 # define FT_LIBFT_H
 
@@ -20,7 +23,7 @@
 # endif
 
 # ifndef OPEN_MAX
-#  define OPEN_MAX 10400
+#  define OPEN_MAX 3
 # endif
 
 # include <stddef.h>
@@ -37,4 +40,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len);
 char	*ft_strip_chars(char *str, char c);
 int		get_next_line(int fd, char **line);
 
+#endif
+#ifdef __cplusplus
+}
 #endif

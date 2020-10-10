@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 #ifndef FT_MEMORY_H
 # define FT_MEMORY_H
 
@@ -24,4 +27,7 @@ void	*ft_free(void *ptr);
 char	**ft_free_array(char **arr);
 void	*ft_nullcheck(void *data);
 
+#endif
+#ifdef __cplusplus
+}
 #endif

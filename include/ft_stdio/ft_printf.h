@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 #ifndef PRINTF_H
 # define PRINTF_H
 
@@ -62,4 +65,7 @@ void	ft_eprintf(int code, const char *str, ...);
 */
 int		ft_snprintf(char *str, size_t size, const char *fmt, ...);
 
+#endif
+#ifdef __cplusplus
+}
 #endif

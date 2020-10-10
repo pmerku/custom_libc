@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 #ifndef FT_LLIST_H
 # define FT_LLIST_H
 
@@ -46,4 +49,7 @@ void					ft_llist_clear(t_llist *lst);
 
 void					ft_llist_iter(t_llist *lst, void (*f)(void *));
 
+#endif
+#ifdef __cplusplus
+}
 #endif

@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 #ifndef FT_STDLIB_H
 # define FT_STDLIB_H
 
@@ -19,4 +22,7 @@ double	ft_dabs(double n);
 int		ft_max(int a, int b);
 int		ft_min(int a, int b);
 
+#endif
+#ifdef __cplusplus
+}
 #endif
