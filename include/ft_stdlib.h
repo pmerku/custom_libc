@@ -21,6 +21,7 @@ int		ft_abs(int n);
 double	ft_dabs(double n);
 int		ft_max(int a, int b);
 int		ft_min(int a, int b);
+void	ft_exit(int status);
 
 #endif
 #ifdef __cplusplus

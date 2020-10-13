@@ -16,6 +16,7 @@
 		%ifidn __OUTPUT_FORMAT__, elf64
 				%define SYS_READ 0
 				%define SYS_WRITE 1
+				%define SYS_EXIT 60
 				%define LABEL_PREFIX(prefix)
 				%define DEFINE_ERROR __errno_location
 				%macro ERRNO_MACRO 1
@@ -31,6 +32,7 @@
 		%elifidn __OUTPUT_FORMAT__, macho64
 				%define SYS_READ 0x2000003
 				%define SYS_WRITE 0x2000004
+				%define SYS_EXIT 0x2000001
 				%define LABEL_PREFIX(prefix) _
 				%define DEFINE_ERROR ___error
 				%macro ERRNO_MACRO 1

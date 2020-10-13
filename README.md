@@ -6,7 +6,6 @@ Personal version of some C/CPP libraries
 - `ft_strchr` ok | `ft_strrchr` ok
 - `ft_strcmp` ok | `ft_strncmp` ok
 - `ft_strcpy` ok | `ft_strncpy` | `ft_strlcpy`
-- `ft_strerror`
 - `ft_strlen` ok | `ft_strnlen` ok
 - `ft_strpbrk`
 - `ft_strsep`
@@ -27,17 +26,32 @@ Personal version of some C/CPP libraries
 ### ft_memory.h
 - `ft_malloc` ok
 - `ft_calloc` ok
-- `ft_realloc`
+- `ft_realloc` ok
 - `ft_free` ok
 - `ft_bzero` ok
 - `ft_free_array` ok
+- `ft_get_size` ok
+### ft_rbtree.h
+- `ft_rb_parent`
+- `ft_rb_rotate_left`
+- `ft_rb_rotate_right`
+- `ft_rb_insert`
+- `ft_rb_insert_recurse`
+- `ft_rb_insert_recurse`
+- `ft_rb_insert_fixup`
+- `ft_rb_print`
+- `ft_rb_search`
+- `ft_rb_replace_node`
+- `ft_rb_delete_one_child`
+- `ft_rb_delete`
+- `ft_rb_delete_fixup`
 ### ft_stdio.h
-- `ft_printf` ok <- refactor
-- `ft_snprintf` ok <- refactor
-- `ft_fprintf` ok <- refactor
-- `ft_vprintf` ok <- refactor
-- `ft_eprintf` ok <- refactor
-- `ft_vfprintf` ok <- refactor
+- `ft_printf` ok
+- `ft_snprintf` ok
+- `ft_fprintf` ok
+- `ft_vprintf` ok
+- `ft_eprintf` ok
+- `ft_vfprintf` ok
 ### ft_stdlib.h
 - `ft_abs` ok | `ft_dabs` ok
 - `ft_max` ok
@@ -46,7 +60,7 @@ Personal version of some C/CPP libraries
 - `ft_atoi_base`
 - `ft_atol` | `ft_atoll`
 - `ft_atol_base` | `ft_atoll_base`
-- `ft_exit`
+- `ft_exit` ok
 ### ft_unistd.h
 - `ft_write` ok
 - `ft_read` ok
@@ -90,35 +104,36 @@ Personal version of some C/CPP libraries
 - `ft_llist_push_front` ok
 - `ft_llist_push_back` ok
 - `ft_llist_size` ok
-- `ft_lstlast` todo?
-- `ft_lstmap` todo?
+- `ft_llist_last` ok
 - `ft_llist_push_front` ok
 - `ft_llist_size` ok
 - `ft_llist_sort` ok
 - `ft_llist_remove_if` ok
 ### ft_dllist.h
-- `ft_dllist_new`
-- `ft_dllist_push_back`
-- `ft_dllist_push_front`
-- `ft_dllist_clear`
-- `ft_dllist_free`
-- `ft_dllist_iter`
-- `ft_dllist_last`
-- `ft_dllist_map`
-- `ft_dllist_size`
+- `ft_dllist_new` ok
+- `ft_dllist_push_back` ok
+- `ft_dllist_push_front` ok
+- `ft_dllist_clear` ok
+- `ft_dllist_rclear` ok
+- `ft_dllist_free` ok
+- `ft_dllist_rfree` ok
+- `ft_dllist_iter` ok
+- `ft_dllist_riter` ok
+- `ft_dllist_last` ok
+- `ft_dllist_size` ok
+- `ft_dllist_rsize` ok
 ### ft_fcntl.h
 - `ft_open`
 - `ft_close`
 - `ft_fopen`
 - `ft_fclose`
-### ft_assert.h
-- `ft_assert`
-### ft_errno.h
+### ft_errno.h - ok
+- `ft_strerror` ok
 ### ft_limits.h
 ### ft_signal.h
 ### ft_stdbool.h
 ### ft_stddef.h
-### MutantStack.hpp
+### MutantStack.hpp - ok
 
 ## TODO:
 Documentation generator/extractor, man pages, Continuous integration, unit testing
