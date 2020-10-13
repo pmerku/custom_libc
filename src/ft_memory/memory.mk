@@ -13,7 +13,8 @@
 MEMORY_DIR		= ft_memory
 
 MEMORY_SOURCES	= ft_bzero.c ft_calloc.c ft_checked_calloc.c \
-	ft_checked_malloc.c ft_free.c ft_free_array.c ft_malloc.c ft_nullcheck.c
+	ft_checked_malloc.c ft_free.c ft_free_array.c ft_malloc.c ft_nullcheck.c \
+	ft_getsize.c
 MEMORY_SOURCES	:= $(addprefix $(MEMORY_DIR)/,$(MEMORY_SOURCES))
 
 SRC 	+= $(MEMORY_SOURCES)

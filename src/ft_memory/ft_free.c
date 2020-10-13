@@ -13,6 +13,10 @@
 #include <stdlib.h>
 
 void	*ft_free(void *ptr) {
-	free(ptr);
+	size_t	*data = ptr;
+	if (data) {
+		data--;
+		free(data);
+	}
 	return (NULL);
 }

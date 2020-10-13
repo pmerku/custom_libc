@@ -13,6 +13,7 @@
 #include <ft_stdio/ft_printf.h>
 #include <ft_string.h>
 #include <stdlib.h>
+#include <ft_stdlib.h>
 #include <ft_libft.h>
 #include <fcntl.h>
 #include <ft_memory.h>
@@ -34,7 +35,7 @@ int 	main(void)
 	while (s0 > 0) {
 		s0 = get_next_line(fd, &line);
 		ft_printf("[%d][%d]=> [%s]\n", fd, s0, line);
-		free(line);
+		ft_free(line);
 	}
 	close(fd);
 	char	*s = static_cast<char *>(ft_malloc(8));
@@ -61,7 +62,12 @@ int 	main(void)
 		std::cout << *it << " | ";
 		++it;
 	}
-	vstack.pop();
 	std::cout << "\ntop: " << vstack.top() << '\n';
-	return 0;
+
+	char *ptr = static_cast<char *>(ft_malloc(50));
+	ft_bzero(ptr, 50);
+	std::cout << ft_getsize(ptr) << std::endl;
+	ft_free(ptr);
+	std::cout << ft_getsize(ptr) << std::endl;
+	ft_exit(0);
 }

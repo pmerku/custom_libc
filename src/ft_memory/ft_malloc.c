@@ -14,6 +14,10 @@
 #include <stdlib.h>
 
 void	*ft_malloc(size_t n) {
-	void *data = malloc(n);
+	size_t *data = malloc((1 * sizeof(size_t)) + n);
+	if (data) {
+		*data = n;
+		data++;
+	}
 	return (data);
 }

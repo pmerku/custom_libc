@@ -15,7 +15,7 @@
 section .text
 	global	FN_LABEL(ft_strdup)
 	extern	FN_LABEL(ft_strlen)
-	extern	FN_LABEL(malloc)
+	extern	FN_LABEL(ft_malloc)
 	extern	FN_LABEL(ft_strcpy)
 
 FN_LABEL(ft_strdup):
@@ -31,7 +31,7 @@ FN_LABEL(ft_strdup):
     push    rbp
 	mov     rbp, rsp
 	and		rsp, -0x10
-	call	FN_LABEL(malloc)
+	call	FN_LABEL(ft_malloc)
 	jc		.return
     mov     rsp, rbp
     pop     rbp

@@ -10,26 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-#ifndef FT_MEMORY_H
-# define FT_MEMORY_H
+#include <ft_memory.h>
+#include <ft_string.h>
 
-# include <stddef.h>
-
-void	ft_bzero(void *s, size_t n);
-void	*ft_checked_malloc(size_t n);
-void	*ft_malloc(size_t n);
-void	*ft_checked_calloc(size_t count, size_t size);
-void	*ft_calloc(size_t count, size_t size);
-void	*ft_free(void *ptr);
-char	**ft_free_array(char **arr);
-void	*ft_nullcheck(void *data);
-
-size_t	ft_getsize(void *ptr);
-
-#endif
-#ifdef __cplusplus
+void	*ft_realloc(void *ptr, size_t size) {
+	size_t	old_size = ft_getsize(ptr);
+	if (size == 0) {
+		ft_free(ptr);
+		return (NULL);
+	}
+	else if (size <= old_size) {
+		return (ptr);
+	}
+	else {
+		void *new_ptr = ft_malloc(size);
+		if (new_ptr) {
+			ft_memcpy(new_ptr, ptr, old_size);
+			ft_free(ptr);
+		}
+		return (new_ptr);
+	}
 }
-#endif
