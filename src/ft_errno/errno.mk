@@ -10,10 +10,10 @@
 #                                                                              #
 # **************************************************************************** #
 
-LIBFT_DIR		= ft_errno
+ERRNO_DIR		= ft_errno
 
-LIBFT_SOURCES	= ft_errno.c
-LIBFT_SOURCES 	:= $(addprefix $(LIBFT_DIR)/,$(LIBFT_SOURCES))
+ERRNO_SOURCES	= ft_errno.c
+ERRNO_SOURCES 	:= $(addprefix $(ERRNO_DIR)/,$(ERRNO_SOURCES))
 
-SRC 	+= $(LIBFT_SOURCES)
+SRC 	+= $(ERRNO_SOURCES)
 HEADERS	+= ft_errno.h
