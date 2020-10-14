@@ -21,7 +21,7 @@ Macros for x64 assembly portability between Linux and MacOSx.
 The macro will expand to the chosen OS depending if the `.asm` was compiled with `elf64` or `macho64` format flag.
 
 ### Example use
-```asm
+```assembly
 %include "macros.asm"
 
 section .text
