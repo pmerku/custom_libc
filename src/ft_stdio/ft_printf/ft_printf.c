@@ -12,6 +12,14 @@
 
 #include <ft_stdio/ft_printf_utils.h>
 
+/*
+ * Write the output to STDOUT under the control of a format string that specifies how subsequent
+ * arguments are converted for output.
+ *
+ * @param1	const char * format string
+ * @param2  ...          variable length argument
+ * @return  int          number of printed characters
+ */
 int		ft_printf(const char *fmt, ...) {
 	va_list			args;
 	t_ft_printf		printf;

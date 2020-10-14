@@ -39,7 +39,7 @@ int		ft_vprintf(const char *str, va_list arg);
 ** Performs a printf, writing the output to the specified fd , but reads the
 ** arguments from the va_list of another function
 */
-int		ft_vprintf(const char *str, va_list arg);
+int		ft_vfprintf(int fd, const char *str, va_list arg);
 
 /*
 ** Performs a printf writing to STDERR, exiting the code afterwards.

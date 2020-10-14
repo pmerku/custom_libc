@@ -10,6 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+ * Convert char to lowercase
+ *
+ * @return  int value of converted char
+ */
 int		ft_tolower(int c) {
 	if (c >= 'A' && c <= 'Z') {
 		return (c + 32);

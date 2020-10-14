@@ -5,9 +5,16 @@ heading_anchors: true
 color_scheme: dark
 ga_tracking: UA-180544443-1
 
+# Aux links for the upper right navigation
 aux_links:
   "Custom libc on GitHub":
     - "//github.com/pmerku/custom_libc"
+
+# Back to top link
+back_to_top: true
+back_to_top_text: "Back to top"
+
+footer_content: "Copyright &copy; 2020 Primož Merkù. Distributed by an <a href=\"https://github.com/pmerku/custom_libc/tree/master/LICENSE\">MIT license.</a>"
 
 remote_theme: pmarsceill/just-the-docs
 plugins:

@@ -10,6 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+ * Convert char to uppercase
+ *
+ * @return  int value of converted char
+ */
 int		ft_toupper(int c) {
 	if (c >= 'a' && c <= 'z') {
 		return (c - 32);

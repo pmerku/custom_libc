@@ -13,6 +13,15 @@
 #include <ft_stdio/ft_printf_utils.h>
 #include <stdlib.h>
 
+/*
+ * Write the output to `fd` under the control of a format string that specifies how subsequent
+ * arguments are converted for output and exit out the code.
+ *
+ * @param1	int          exit code
+ * @param1	const char * format string
+ * @param2  ...          variable length argument
+ * @return  int          number of printed characters
+ */
 void	ft_eprintf(int code, const char *fmt, ...) {
 	va_list			args;
 	t_ft_printf		printf;

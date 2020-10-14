@@ -12,6 +12,15 @@
 
 #include <ft_stdio/ft_printf_utils.h>
 
+/*
+ * Write the output to `fd` under the control of a format string that specifies how subsequent
+ * arguments are converted for output.
+ *
+ * @param1	int fd       output file descriptor
+ * @param2	const char * format string
+ * @param3  ...          variable length argument
+ * @return  int          number of printed characters
+ */
 int		ft_fprintf(int fd, const char *fmt, ...) {
 	va_list			args;
 	t_ft_printf		printf;

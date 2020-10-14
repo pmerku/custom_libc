@@ -12,6 +12,16 @@
 
 #include <ft_stdio/ft_printf_utils.h>
 
+/*
+ * Write the output to a string under the control of a format string that specifies how subsequent
+ * arguments are converted for output.
+ *
+ * @param1	char *       output string
+ * @param2  size_t       size to print
+ * @param3	const char * format string
+ * @param4  ...          variable length argument
+ * @return  int          number of printed characters
+ */
 int		ft_snprintf(char *str, size_t size, const char *fmt, ...) {
 	va_list			args;
 	t_ft_printf		printf;
