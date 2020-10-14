@@ -24,6 +24,7 @@ The values returned are nonzero if the character `c` falls into the tested class
 /*
  * Check if character is alphanumerical
  *
+ * @param   int character value
  * @return  int 1 if true and 0 if false
  */
 int     ft_isalnum(int c);
@@ -39,6 +40,7 @@ The values returned are nonzero if the character `c` falls into the tested class
 /*
  * Check if character is alphabetical
  *
+ * @param   int character value
  * @return  int 1 if true and 0 if false
  */
 int     ft_isalpha(int c);
@@ -52,6 +54,7 @@ The values returned are nonzero if the character `c` falls into the tested class
 /*
  * Check if character is part of the ASCII table
  *
+ * @param   int character value
  * @return  int 1 if true and 0 if false
  */
 int     ft_isascii(int c);
@@ -65,6 +68,7 @@ The values returned are nonzero if the character `c` falls into the tested class
 /*
  * Check if character is a digit
  *
+ * @param   int character value
  * @return  int 1 if true and 0 if false
  */
 int     ft_isdigit(int c);
@@ -78,6 +82,7 @@ The values returned are nonzero if the character `c` falls into the tested class
 /*
  * Check if character is lowercase
  *
+ * @param   int character value
  * @return  int 1 if true and 0 if false
  */
 int     ft_islower(int c);
@@ -91,6 +96,7 @@ The values returned are nonzero if the character `c` falls into the tested class
 /*
  * Check if character is printable
  *
+ * @param   int character value
  * @return  int 1 if true and 0 if false
  */
 int     ft_isprint(int c);
@@ -105,6 +111,7 @@ The values returned are nonzero if the character `c` falls into the tested class
 /*
  * Check if character is a white-space
  *
+ * @param   int character value
  * @return  int 1 if true and 0 if false
  */
 int     ft_isspace(int c);
@@ -118,6 +125,7 @@ The values returned are nonzero if the character `c` falls into the tested class
 /*
  * Check if character is uppercase
  *
+ * @param   int character value
  * @return  int 1 if true and 0 if false
  */
 int     ft_isupper(int c);
@@ -131,6 +139,7 @@ The value returned is that of the converted letter, or `c` if the conversion was
 /*
  * Convert char to lowercase
  *
+ * @param   int character value
  * @return  int value of converted char
  */
 int     ft_tolower(int c);
@@ -144,6 +153,7 @@ The value returned is that of the converted letter, or `c` if the conversion was
 /*
  * Convert char to uppercase
  *
+ * @param   int character value
  * @return  int value of converted char
  */
 int     ft_toupper(int c);
