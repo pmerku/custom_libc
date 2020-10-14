@@ -1,1 +1,14 @@
-theme: just-the-docs
+title: "Custom Libc Docs"
+
+search_enabled: true
+heading_anchors: true
+color_scheme: dark
+ga_tracking: UA-180544443-1
+
+aux_links:
+  "Custom libc on GitHub":
+    - "//github.com/pmerku/custom_libc"
+
+remote_theme: pmarsceill/just-the-docs
+plugins:
+  - jekyll-remote-theme
