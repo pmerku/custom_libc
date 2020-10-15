@@ -22,7 +22,7 @@ The macro will expand to the chosen OS depending if the `.asm` was compiled with
 
 ### Example use
 
-```assembly
+```c
 %include "macros.asm"
 
 section .text
