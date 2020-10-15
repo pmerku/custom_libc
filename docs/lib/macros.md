@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Macros
+title: macros.asm
 parent: Home
 nav_order: 1
 ---
@@ -21,6 +21,7 @@ Macros for x64 assembly portability between Linux and MacOSx.
 The macro will expand to the chosen OS depending if the `.asm` was compiled with `elf64` or `macho64` format flag.
 
 ### Example use
+
 ```assembly
 %include "macros.asm"
 
@@ -29,4 +30,5 @@ section .text
 
 FN_LABEL(<function-name>):
 ```
+
 On Linux `FN_LABLE` macro will expand to nothing and on MacOSx will prefix the <function-name> with an `_`.

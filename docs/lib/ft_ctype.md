@@ -2,7 +2,7 @@
 layout: default
 title: ft_ctype
 parent: Home
-nav_order: 3
+nav_order: 2
 ---
 
 ## \#include <ft_ctype.h>

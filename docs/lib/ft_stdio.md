@@ -2,7 +2,7 @@
 layout: default
 title: ft_stdio/ft_printf
 parent: Home
-nav_order: 3
+nav_order: 10
 ---
 
 ## \#include <ft_stdio/ft_printf>
@@ -30,7 +30,7 @@ If an output error is encountered, a negative value is returned.
  * Write the output to STDOUT under the control of a format string that specifies how subsequent
  * arguments are converted for output.
  *
- * @param1	const char * format string
+ * @param1  const char * format string
  * @param2  ...          variable length argument
  * @return  int          number of printed characters
  */
@@ -48,8 +48,8 @@ If an output error is encountered, a negative value is returned.
  * Write the output to `fd` under the control of a format string that specifies how subsequent
  * arguments are converted for output.
  *
- * @param1	int fd       output file descriptor
- * @param2	const char * format string
+ * @param1  int fd       output file descriptor
+ * @param2  const char * format string
  * @param3  ...          variable length argument
  * @return  int          number of printed characters
  */
@@ -67,7 +67,7 @@ If an output error is encountered, a negative value is returned.
  * Write the output to STDOUT under the control of a format string that specifies how subsequent
  * arguments are converted for output.
  *
- * @param1	const char * format string
+ * @param1  const char * format string
  * @param2  va_list      variable length list
  * @return  int          number of printed characters
  */
@@ -86,7 +86,7 @@ If an output error is encountered, a negative value is returned.
  * arguments are converted for output.
  *
  * @param1  int          output file descriptor
- * @param2	const char * format string
+ * @param2  const char * format string
  * @param3  va_list      variable length list
  * @return  int          number of printed characters
  */
@@ -104,8 +104,8 @@ If an output error is encountered, a negative value is returned.
  * Write the output to `fd` under the control of a format string that specifies how subsequent
  * arguments are converted for output and exit out the code.
  *
- * @param1	int          exit code
- * @param1	const char * format string
+ * @param1  int          exit code
+ * @param1  const char * format string
  * @param2  ...          variable length argument
  * @return  int          number of printed characters
  */
@@ -127,9 +127,9 @@ If an output error is encountered, a negative value is returned.
  * Write the output to a string under the control of a format string that specifies how subsequent
  * arguments are converted for output.
  *
- * @param1	char *       output string
+ * @param1  char *       output string
  * @param2  size_t       size to print
- * @param3	const char * format string
+ * @param3  const char * format string
  * @param4  ...          variable length argument
  * @return  int          number of printed characters
  */
