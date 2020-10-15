@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <ft_memory.h>
-#include <ft_string.h>
+#include <ft_libft.h>
 
 /*
  * Append a string to a 2d array
