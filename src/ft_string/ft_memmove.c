@@ -13,6 +13,14 @@
 #include <stddef.h>
 #include <ft_string.h>
 
+/*
+ * Copy n bytes from src into dst
+ *
+ * @param1  void *       dst memory area
+ * @param2  const void * src memory area
+ * @param3  size_t       number of bytes to copy
+ * @return  void *       pointer to dst
+ */
 void	*ft_memmove(void *dst, const void *src, size_t len) {
 	char *d = (char*)dst;
 	char *s = (char*)src;

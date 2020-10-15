@@ -13,6 +13,13 @@
 #include <ft_memory.h>
 #include <ft_string.h>
 
+/*
+ * Reallocate memory to new size
+ *
+ * @param1  void * pointer to allocate memory to reallocate
+ * @param2  size_t size of new allocation
+ * @return  void * pointer to reallocated memory
+ */
 void	*ft_realloc(void *ptr, size_t size) {
 	size_t	old_size = ft_getsize(ptr);
 	if (size == 0) {

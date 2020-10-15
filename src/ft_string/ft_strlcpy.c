@@ -10,13 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
+#include <ft_string.h>
+
 /*
- * Get the smaller number
+ * Copy at most n bytes from src string to dst buffer and
+ * return size of new dst string
  *
- * @param1  int number 1
- * @param2  int number 2
- * @return  int the smaller number
+ * @param1  char *       string where to copy
+ * @param2  const char * string to copy
+ * @param3  size_t       number of bytes to copy
+ * @return  size_t       size of new dst string
  */
-int		ft_min(int a, int b) {
-	return (a < b ? a : b);
+size_t		ft_strlcpy(char *dst, const char *src, size_t size) {
+	if (!dst || !src) {
+		return (0);
+	}
+	size_t slen = ft_strlen(src);
+	if (slen + 1 < size) {
+		ft_memcpy(dst, src, slen + 1);
+	}
+	else if (size != 0) {
+		ft_memcpy(dst, src, size - 1);
+		dst[size - 1] = '\0';
+	}
+	return (slen);
 }

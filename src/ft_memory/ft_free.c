@@ -12,6 +12,12 @@
 
 #include <stdlib.h>
 
+/*
+ * Free allocated memory
+ *
+ * @param   void * pointer to allocated memory
+ * @return  void * NULL is returned
+ */
 void	*ft_free(void *ptr) {
 	size_t	*data = ptr;
 	if (data) {

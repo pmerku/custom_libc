@@ -12,6 +12,13 @@
 
 #include <stddef.h>
 
+/*
+ * Strip characters away from a character array
+ *
+ * @param1  char * character array where to strip
+ * @param2  char   character to strip
+ * @return  char * the stripped character array
+ */
 char	*ft_strip_chars(char *str, char c) {
 	size_t src = 0;
 	size_t pos = 0;

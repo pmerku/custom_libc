@@ -10,6 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+ * Get absolute value of a double
+ *
+ * @param   double number to use
+ * @return  double absolute value
+ */
 double	ft_dabs(double n) {
 	return (n < 0 ? -n : n);
 }

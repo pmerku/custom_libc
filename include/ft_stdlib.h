@@ -20,8 +20,15 @@ int		ft_atoi(const char *str);
 int		ft_abs(int n);
 double	ft_dabs(double n);
 int		ft_max(int a, int b);
-int		ft_min(int a, int b);
-void	ft_exit(int status);
+int 	ft_min(int a, int b);
+
+/*
+ * Exit the program with a provided exit code
+ *
+ * @param   int  exit code
+ * @return  void no return
+ */
+extern void	ft_exit(int status);
 
 #endif
 #ifdef __cplusplus

@@ -47,6 +47,15 @@ static char	read_word(const char *str, char delim, char **arr, int last) {
 	return (1);
 }
 
+/*
+ * Split a character array based on a delimiter, until the
+ * end of the array or max number of splits.
+ *
+ * @param1  const char * array to split
+ * @param2  char         delimiter to split on
+ * @param3  int          max number of splits
+ * @return  char **      2d sized array
+ */
 char		**ft_nsplit(const char *str, char delim, int max) {
 	if (!str) {
 		return (NULL);

@@ -12,11 +12,19 @@
 
 #include <stddef.h>
 
-void	*ft_memset(void *b, int c, size_t len) {
-	unsigned char *ptr = (unsigned char*)b;
-	while (len--) {
+/*
+ * Set n bytes in s to the character c
+ *
+ * @param1  void * pointer to memory to fill
+ * @param2  int    character value
+ * @param3  size_t number of bytes to set
+ * @return  void * pointer to filled memory
+ */
+void	*ft_memset(void *s, int c, size_t n) {
+	unsigned char *ptr = (unsigned char*)s;
+	while (n--) {
 		*ptr = (char)c;
 		ptr++;
 	}
-	return (b);
+	return (s);
 }

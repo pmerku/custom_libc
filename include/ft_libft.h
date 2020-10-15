@@ -39,6 +39,8 @@ char	*ft_strempty(void);
 char	*ft_substr(const char *s, unsigned int start, size_t len);
 char	*ft_strip_chars(char *str, char c);
 int		get_next_line(int fd, char **line);
+void	ft_strarr_append(char ***arr, char *line);
+int		ft_strarr_size(char **arr);
 
 #endif
 #ifdef __cplusplus

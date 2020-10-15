@@ -12,6 +12,12 @@
 
 #include <stddef.h>
 
+/*
+ * Get size of allocated memory
+ *
+ * @param   void * pointer to allocated memory
+ * @return  size_t size of allocated memory
+ */
 size_t	ft_getsize(void *ptr) {
 	size_t *data = ptr;
 	if (data) {

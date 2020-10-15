@@ -15,6 +15,14 @@
 #include <ft_string.h>
 #include <ft_memory.h>
 
+/*
+ * Get a substring out of a character array
+ *
+ * @param1  const char * array where to get the substring
+ * @param2  unsigned int index where to start the substring
+ * @param3  size_t       size of the substring
+ * @return  char *       pointer to the substring
+ */
 char	*ft_substr(const char *s, unsigned int start, size_t len) {
 	if (len == 0 || start > ft_strlen(s)) {
 		return (ft_strempty());

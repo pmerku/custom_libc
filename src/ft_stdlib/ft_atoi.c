@@ -12,6 +12,12 @@
 
 #include <ft_ctype.h>
 
+/*
+ * Convert a character array into an integer
+ *
+ * @param   const char * array to convert
+ * @return  int          converted integer
+ */
 int		ft_atoi(const char *str) {
 	long long num = 0;
 	int prefix = 1;

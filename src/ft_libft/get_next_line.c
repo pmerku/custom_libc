@@ -45,6 +45,14 @@ static int	ft_read_line(int fd, char **store) {
 	return (res);
 }
 
+/*
+ * Read from a file descriptor and store the read line without
+ * a `\n` at the end
+ *
+ * @param1  int     file descriptor for reading
+ * @param2  char ** the value of what was read
+ * @return  int     1 if a line was read, 0 EOF has been reached and -1 on error
+ */
 int			get_next_line(int fd, char **line) {
 	static char	*store[OPEN_MAX];
 

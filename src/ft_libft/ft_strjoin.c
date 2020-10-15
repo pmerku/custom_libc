@@ -14,6 +14,13 @@
 #include <ft_string.h>
 #include <ft_memory.h>
 
+/*
+ * Join two character arrays into one
+ *
+ * @param1  char const * first character array
+ * @param2  char const * second character array
+ * @return  char *       new character array
+ */
 char	*ft_strjoin(char const *s1, char const *s2) {
 	if (!s1 || !s2)
 		return (NULL);

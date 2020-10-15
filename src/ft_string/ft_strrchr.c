@@ -13,6 +13,13 @@
 #include <stddef.h>
 #include <ft_string.h>
 
+/*
+ * Find last occurrence of c in s
+ *
+ * @param1  const char * string to search
+ * @param2  int          character to find
+ * @return  char *       pointer to the matched character
+ */
 char	*ft_strrchr(const char *s, int c) {
 	char *ptr = NULL;
 	if (c == '\0') {

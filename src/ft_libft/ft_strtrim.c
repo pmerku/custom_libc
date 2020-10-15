@@ -14,6 +14,13 @@
 #include <ft_string.h>
 #include <ft_libft.h>
 
+/*
+ * Trim a set out of a character array
+ *
+ * @param1  const char * array to trim
+ * @param2  const char * set to trim
+ * @return  char *       new array without the trimmed set
+ */
 char		*ft_strtrim(const char *s1, const char *set) {
 	if (s1 == NULL || set == NULL) {
 		return (NULL);

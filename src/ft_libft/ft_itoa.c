@@ -14,6 +14,12 @@
 #include <ft_libft.h>
 #include <ft_memory.h>
 
+/*
+ * Convert integer to string
+ *
+ * @param   int    number to convert
+ * @return  char * number in a string
+ */
 char		*ft_itoa(int n) {
 	size_t	len = ft_intlen(n);
 	char	*str = ft_malloc(sizeof(char) * (len + 1));

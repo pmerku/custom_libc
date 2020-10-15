@@ -13,6 +13,13 @@
 #include <ft_memory.h>
 #include <ft_string.h>
 
+/*
+ * Append a string to a 2d array
+ *
+ * @param1  char *** pointer to the array where the string will be appended
+ * @param2  char *   string to appen
+ * @return  void     no return
+ */
 void			ft_strarr_append(char ***arr, char *line) {
 	if (*arr == NULL) {
 		*arr = ft_checked_calloc(2, sizeof(char *));
