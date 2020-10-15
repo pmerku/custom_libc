@@ -5,7 +5,7 @@ parent: Home
 nav_order: 12
 ---
 
-## \#include <ft_string.h>
+## \#include \<ft_string.h\>
 {: .no_toc }
 
 ## Table of contents

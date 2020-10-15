@@ -5,7 +5,7 @@ parent: Home
 nav_order: 1
 ---
 
-## %include "macros.asm"
+## %include \"macros.asm\"
 {: .no_toc }
 
 ## Table of contents

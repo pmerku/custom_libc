@@ -5,7 +5,7 @@ parent: Home
 nav_order: 4
 ---
 
-## \#include <ft_errno.h>
+## \#include \<ft_errno.h\>
 {: .no_toc }
 
 ## Table of contents

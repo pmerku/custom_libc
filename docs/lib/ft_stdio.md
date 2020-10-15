@@ -5,7 +5,7 @@ parent: Home
 nav_order: 10
 ---
 
-## \#include <ft_stdio/ft_printf>
+## \#include \<ft_stdio/ft_printf\>
 {: .no_toc }
 
 ## Table of contents
