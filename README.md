@@ -1,6 +1,8 @@
 ## Custom_libc
 Personal version of some C/CPP libraries
 
+##### Link to documentation: https://pmerku.github.io/custom_libc
+
 ### List of functions to add:
 ### ft_string.h
 - `ft_stpcpy`
