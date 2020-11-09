@@ -15,7 +15,7 @@ jobs:
         os: [ubuntu-latest, macOS-latest]
 
     steps:
-    - uses: ilammy/setup-nasm@v1.1.0
+    - uses: ilammy/setup-nasm@v1
     - uses: actions/checkout@v2
     - name: make
       run: make
