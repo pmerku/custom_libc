@@ -14,7 +14,7 @@
 NAME			= test
 
 # Compiler
-CFLAGS			= -Wall -Werror -Wextra
+CFLAGS			= -Wall -Werror -Wextra -std=c++11
 DFLAGS			= -g
 CC 				= clang++
 # Files
