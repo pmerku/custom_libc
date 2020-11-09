@@ -32,8 +32,9 @@ void	ft_test_read() {
 		close(fd2);
 		ft_assert((ft_strcmp(buf1, buf2) == 0));
 	}
-	int ret1 = ft_read(FOPEN_MAX + 1, NULL, 128);
-	int ret2 = read(FOPEN_MAX + 1, NULL, 128);
+	int ret1 = read(FOPEN_MAX + 1, NULL, 128);
+	errno = 100;
+	int ret2 = ft_read(FOPEN_MAX + 1, NULL, 128);
 	ft_assert(ret1 == ret2);
 }
 
