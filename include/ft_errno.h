@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 #ifndef FT_ERRNO_H
 # define FT_ERRNO_H
 
@@ -34,4 +37,7 @@ void			set_errno(int errno_value);
 int				get_errno(void);
 char			*ft_strerror(int errno_value);
 
+#endif
+#ifdef __cplusplus
+}
 #endif
