@@ -30,11 +30,11 @@ void	ft_test_read() {
 		buf2[ret2] = '\0';
 		close(fd1);
 		close(fd2);
-		assert((ft_strcmp(buf1, buf2) == 0));
+		ft_assert((ft_strcmp(buf1, buf2) == 0));
 	}
 	int ret1 = ft_read(FOPEN_MAX + 1, NULL, 128);
 	int ret2 = read(FOPEN_MAX + 1, NULL, 128);
-	assert(ret1 == ret2);
+	ft_assert(ret1 == ret2);
 }
 
 void 	ft_test_write() {
@@ -44,11 +44,11 @@ void 	ft_test_write() {
 		int fd = open("tests/text", O_WRONLY | O_CREAT | O_APPEND, 0777);
 		int ret1 = ft_write(fd, arr.c_str(), arr.length());
 		int ret2 = write(fd, arr.c_str(), arr.length());
-		assert(ret1 == ret2);
+		ft_assert(ret1 == ret2);
 		system("rm tests/text");
 	}
 	int ret1 = write(FOPEN_MAX + 1, "abcdefghijklmnopqrstuvwxyz\n", 27);
 	errno = 100;
 	int ret2 = ft_write(FOPEN_MAX + 1, "abcdefghijklmnopqrstuvwxyz\n\n", 27);
-	assert(ret1 == ret2);
+	ft_assert(ret1 == ret2);
 }

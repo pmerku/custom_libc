@@ -34,7 +34,7 @@ static struct s_test	g_tests[] = {
 		{.name = "", .test = nullptr }
 };
 
-void	assert(int expression) {
+void	ft_assert(int expression) {
 	g_test_count++;
 	if (!expression) {
 		printf("Assertion %d failed\n", g_test_count);

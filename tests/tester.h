@@ -21,7 +21,7 @@ struct		s_test {
 	void		(*test)();
 };
 
-void	assert(int expression);
+void	ft_assert(int expression);
 
 /*
  * ctype tests

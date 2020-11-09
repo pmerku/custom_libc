@@ -31,7 +31,7 @@ void	ft_test_gnl() {
 		}
 		close(fd);
 		close(out);
-		assert((system("diff tests/main.cpp tests/text > /dev/null") == 0));
+		ft_assert((system("diff tests/main.cpp tests/text > /dev/null") == 0));
 		system("rm tests/text");
 	}
 }

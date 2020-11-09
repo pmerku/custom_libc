@@ -94,24 +94,24 @@ void	ft_test_mstack() {
 	while (i++ < 100) {
 		try {
 			list_test();
-			assert(1);
+			ft_assert(1);
 		}
 		catch (...) {
-			assert(0);
+			ft_assert(0);
 		}
 		try {
 			vector_test();
-			assert(1);
+			ft_assert(1);
 		}
 		catch (...) {
-			assert(0);
+			ft_assert(0);
 		}
 		try {
 			deque_test();
-			assert(1);
+			ft_assert(1);
 		}
 		catch (...) {
-			assert(0);
+			ft_assert(0);
 		}
 	}
 }
