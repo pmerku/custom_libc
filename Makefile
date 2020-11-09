@@ -70,9 +70,6 @@ OBJ				:= $(patsubst %.cpp,%.o,$(OBJ))
 OBJ				:= $(patsubst %.asm,%.o,$(OBJ))
 HEADERS			:= $(addprefix $(INC_DIR)/,$(HEADERS))
 
-#Test sources
-SRC_TESTS		= tests/main.cpp
-
 #Rules
 .PHONY: all clean fclean re bonus
 
@@ -100,19 +97,21 @@ $(OUT_DIR)/%.o: $(SRC_DIR)/%.asm $(HEADERS)
 clean:
 	@echo "$(PREFIX)$(RED)Removing directory $(END)$(OUT_DIR)"
 	@$(RM) -rf $(OUT_DIR)
+	@$(MAKE) -C tests clean
 
 fclean: clean
 	@echo "$(PREFIX)$(RED)Removing library $(END)$(NAME)"
-	@$(RM) -f $(NAME) $(TEST)
+	@$(RM) -f $(NAME)
+	@$(MAKE) -C tests fclean
 
 re:
 	@$(MAKE) fclean
 	@$(MAKE) all
 
 #Test rules
-$(TEST): $(SRC_TESTS) $(NAME)
+$(TEST): $(NAME)
 	@echo "$(PREFIX)$(GREEN)Bundling tests...$(END)"
-	@$(CC++) $(CFLAGS) -o $(TEST) -I./$(INC_DIR) $(SRC_TESTS) -L. -lft
+	@$(MAKE) -C tests
 
 run: $(TEST)
-	./test
+	./tests/$(TEST)

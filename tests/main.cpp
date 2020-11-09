@@ -10,64 +10,55 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_stdio/ft_printf.h>
-#include <ft_string.h>
-#include <stdlib.h>
-#include <ft_stdlib.h>
-#include <ft_libft.h>
-#include <fcntl.h>
-#include <ft_memory.h>
-#include <MutantStack.hpp>
-#include <iostream>
-#include <vector>
-#include <unistd.h>
+#include <cstdio>
+#include <tester.h>
+#include <ctime>
 
-int 	main(void)
-{
-	int		fd;
-	char	*line;
-	int		s0 = 1;
+static int				g_test_count = 0;
+static int				g_failed_tests = 0;
+static struct s_test	g_tests[] = {
+		{.name = "ft_isalnum()", .test = &ft_test_isalnum},
+		{.name = "ft_isalpha())", .test = &ft_test_isalpha},
+		{.name = "ft_isascii())", .test = &ft_test_isascii},
+		{.name = "ft_isdigit())", .test = &ft_test_isdigit},
+		{.name = "ft_islower())", .test = &ft_test_islower},
+		{.name = "ft_isprint())", .test = &ft_test_isprint},
+		{.name = "ft_isspace())", .test = &ft_test_isspace},
+		{.name = "ft_isupper())", .test = &ft_test_isupper},
+		{.name = "ft_tolower())", .test = &ft_test_tolower},
+		{.name = "ft_toupper())", .test = &ft_test_toupper},
+		{.name = "get_next_line())", .test = &ft_test_gnl},
+		{.name = "ft_read())", .test = &ft_test_read},
+		{.name = "ft_write())", .test = &ft_test_write},
+		{.name = "MutantStack", .test = &ft_test_mstack},
+		{.name = "", .test = nullptr }
+};
 
-	if ((fd = open("./tests/main.cpp", O_RDONLY)) == -1) {
-		std::cout << "Error" << std::endl;
-		return 1;
+void	assert(int expression) {
+	g_test_count++;
+	if (!expression) {
+		printf("Assertion %d failed\n", g_test_count);
+		g_failed_tests++;
 	}
-	while (s0 > 0) {
-		s0 = get_next_line(fd, &line);
-		ft_printf("[%d][%d]=> [%s]\n", fd, s0, line);
-		ft_free(line);
-	}
-	close(fd);
-	char	*s = static_cast<char *>(ft_malloc(8));
-	ft_bzero(s, 8);
-	ft_printf("%d\n", ft_strlen(s));
-	ft_printf("%s\n", ft_strdup("helpme"));
-	ft_printf("%s\n", ft_strcpy(s, "helpme"));
-	ft_printf("%d\n", ft_strcmp(s, "help"));
-	ft_printf("%s\n", ft_memcpy(s, "hello", 6));
+}
 
-	std::cout << "-----------------\n";
-	MutantStack<int, std::vector<int> > vstack;
+int 	main() {
+	size_t	i = 0;
+	int		ret = 0;
+	double	time;
 
-	for (int i = 0; i < 11; ++i) {
-		vstack.push(rand() % 100);
+	while (!g_tests[i].name.empty()) {
+		time = clock();
+		printf("[%f s] Testing: %s\n", time / CLOCKS_PER_SEC, g_tests[i].name.c_str());
+		g_tests[i].test();
+		time = clock();
+		printf("[%f s] %d out of %d tests failed\n", time / CLOCKS_PER_SEC, g_failed_tests, g_test_count);
+		if (g_failed_tests) {
+			ret = (-1);
+		}
+		g_test_count = 0;
+		g_failed_tests = 0;
+		i++;
 	}
-	std::cout << "top: " << vstack.top() << "\n";
-	vstack.pop();
-	std::cout << "size: " << vstack.size() << "\n";
-	MutantStack<int, std::vector<int> >::const_iterator it = vstack.begin();
-	MutantStack<int, std::vector<int> >::const_iterator ite = vstack.end();
-	std::cout << "VStack = ";
-	while (it != ite) {
-		std::cout << *it << " | ";
-		++it;
-	}
-	std::cout << "\ntop: " << vstack.top() << '\n';
-
-	char *ptr = static_cast<char *>(ft_malloc(50));
-	ft_bzero(ptr, 50);
-	std::cout << ft_getsize(ptr) << std::endl;
-	ft_free(ptr);
-	std::cout << ft_getsize(ptr) << std::endl;
-	ft_exit(0);
+	return ret;
 }

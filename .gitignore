@@ -55,7 +55,10 @@ dkms.conf
 
 .idea
 
-test
+tests/text
+tests/test
+tests/out
+out
 .DS_Store
 src/.DS_Store
 src/ft_stdio/.DS_Store

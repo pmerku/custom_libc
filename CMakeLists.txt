@@ -8,8 +8,11 @@ set(CMAKE_CXX_STANDARD 11)
 file(GLOB_RECURSE HEADERS "include/**.h" "include/**.hpp")
 file(GLOB_RECURSE SOURCES "src/**.c" "src/**.cpp")
 
+file(GLOB_RECURSE TEST_SOURCES "tests/**.cpp")
+include_directories(tests)
+
 add_library(ft STATIC ${SOURCES})
-add_executable(test tests/main.cpp)
+add_executable(test ${TEST_SOURCES})
 
 include_directories(include)
 
