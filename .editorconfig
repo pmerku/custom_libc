@@ -8,11 +8,11 @@ insert_final_newline = true
 indent_style = tab
 indent_size = 4
 trim_trailing_whitespace = true
-max_line_length = 80
+max_line_length = 120
 
-[*.{s,asm,c,cpp,h,md,rst}]
+[*.{s,asm,c,cpp,h,md}]
 charset = utf-8
 indent_style = tab
 indent_size = 4
 trim_trailing_whitespace = true
-max_line_length = 80
+max_line_length = 120
