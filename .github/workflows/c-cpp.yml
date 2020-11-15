@@ -18,6 +18,6 @@ jobs:
     - uses: ilammy/setup-nasm@v1
     - uses: actions/checkout@v1
     - name: make
-      run: make
+      run: make -j
     - name: make run
-      run: make run
+      run: make run -j
