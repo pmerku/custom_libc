@@ -35,7 +35,6 @@ void	ft_test_read() {
 	}
 	int ret1 = read(FOPEN_MAX + 1, NULL, 128);
 	std::string str1 = strerror(errno);
-//	errno = 100;	// TODO remove this and test if this still segfaults on mac
 	int ret2 = ft_read(FOPEN_MAX + 1, NULL, 128);
 	std::string str2 = strerror(errno);
 	ft_assert(str1 == str2);
@@ -54,7 +53,6 @@ void 	ft_test_write() {
 	}
 	int ret1 = write(FOPEN_MAX + 1, "abcdefghijklmnopqrstuvwxyz\n", 27);
 	std::string str1 = strerror(errno);
-//	errno = 100;	// TODO remove this and test if this still segfaults on mac
 	int ret2 = ft_write(FOPEN_MAX + 1, "abcdefghijklmnopqrstuvwxyz\n\n", 27);
 	std::string str2 = strerror(errno);
 	ft_assert(str1 == str2);
