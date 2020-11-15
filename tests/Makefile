@@ -16,7 +16,7 @@ NAME			= test
 # Compiler
 CFLAGS			= -Wall -Werror -Wextra -std=c++11
 DFLAGS			= -g
-CC 				= clang++
+
 # Files
 SRC_DIR			= .
 OUT_DIR			= out
@@ -50,12 +50,12 @@ deps:
 
 $(NAME): $(addprefix $(OUT_DIR)/,$(OBJ))
 	@echo "$(PREFIX)$(GREEN) Bundling objects...$(END)"
-	@$(CC) $(CFLAGS) $(DFLAGS) -I$(INC_DIR) -I$(INC_LIBFT) -o $@ $(addprefix $(OUT_DIR)/,$(OBJ)) -L.. -lft
+	@$(CXX) $(CFLAGS) $(DFLAGS) -I$(INC_DIR) -I$(INC_LIBFT) -o $@ $(addprefix $(OUT_DIR)/,$(OBJ)) -L.. -lft
 
 $(OUT_DIR)/%.o: $(SRC_DIR)/%.cpp $(HEADERS)
 	@echo "$(PREFIX)$(GREEN) Compiling file $(END)$< $(GREEN)to $(END)$@"
 	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAGS) $(DFLAGS) -I$(INC_DIR) -I$(INC_LIBFT) -o $@ -c $<
+	@$(CXX) $(CFLAGS) $(DFLAGS) -I$(INC_DIR) -I$(INC_LIBFT) -o $@ -c $<
 
 clean:
 	@echo "$(PREFIX)$(GREEN) Removing directory $(END)$(OUT_DIR)"
@@ -65,7 +65,9 @@ fclean: clean
 	@echo "$(PREFIX)$(GREEN) Removing file $(END)$(NAME)"
 	@rm -f $(NAME)
 
-re: fclean $(NAME)
+re:
+	@$(MAKE) fclean
+	@$(MAKE) all
 
 exec: $(NAME)
 	./$(NAME)
