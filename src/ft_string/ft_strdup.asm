@@ -32,14 +32,18 @@ FN_LABEL(ft_strdup):
 	mov     rbp, rsp
 	and		rsp, -0x10
 	call	FN_LABEL(ft_malloc)
-	jc		.return
+	jc		.return_pop
     mov     rsp, rbp
     pop     rbp
-	pop		rdi
+    pop		rdi
 
 	mov		rsi, rdi
 	mov		rdi, rax
     call	FN_LABEL(ft_strcpy)
+    jmp		.return
+
+.return_pop:
+	pop		rdi
 
 .return:
 	ret
