@@ -22,10 +22,10 @@
 				%macro ERRNO_MACRO 1
 					cmp		rax, 0x0
 					jge		%%skip
-					mov		r8, rax
-					neg		r8
-					call	%1
-					mov		[rax], r8
+					neg		rax
+					push	rax
+					call	%1 wrt ..plt
+					pop		qword [rax]
 					mov		rax, -0x1
 				%%skip:
 				%endmacro
@@ -37,9 +37,9 @@
 				%define DEFINE_ERROR ___error
 				%macro ERRNO_MACRO 1
 					jnc		%%skip
-					mov		r8, rax
+					push	rax
 					call	%1
-					mov		[rax], r8
+					pop		qword [rax]
 					mov		rax, -0x1
 				%%skip:
 				%endmacro

@@ -14,7 +14,8 @@
 #include <tester.h>
 #include <fcntl.h>
 #include <unistd.h>
-#include <errno.h>
+#include <cerrno>
+#include <cstring>
 #include <ft_string.h>
 
 void	ft_test_read() {
@@ -33,8 +34,11 @@ void	ft_test_read() {
 		ft_assert((ft_strcmp(buf1, buf2) == 0));
 	}
 	int ret1 = read(FOPEN_MAX + 1, NULL, 128);
-	errno = 100;
+	std::string str1 = strerror(errno);
+	errno = 100;	// TODO remove this and test if this still segfaults on mac
 	int ret2 = ft_read(FOPEN_MAX + 1, NULL, 128);
+	std::string str2 = strerror(errno);
+	ft_assert(str1 == str2);
 	ft_assert(ret1 == ret2);
 }
 
@@ -49,7 +53,10 @@ void 	ft_test_write() {
 		system("rm tests/text");
 	}
 	int ret1 = write(FOPEN_MAX + 1, "abcdefghijklmnopqrstuvwxyz\n", 27);
-	errno = 100;
+	std::string str1 = strerror(errno);
+	errno = 100;	// TODO remove this and test if this still segfaults on mac
 	int ret2 = ft_write(FOPEN_MAX + 1, "abcdefghijklmnopqrstuvwxyz\n\n", 27);
+	std::string str2 = strerror(errno);
+	ft_assert(str1 == str2);
 	ft_assert(ret1 == ret2);
 }
