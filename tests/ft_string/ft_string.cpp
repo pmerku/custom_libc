@@ -16,9 +16,9 @@
 #include <cstring>
 
 void ft_test_strlen() {
-	char buff[500];
+	char buff[501];
 	size_t	i = 0;
-	ft_bzero(buff, 500);
+	ft_bzero(buff, 501);
 	while (i++ < 500) {
 		size_t j = 0;
 		buff[i] = (char)('a' + i % 26);
@@ -29,9 +29,9 @@ void ft_test_strlen() {
 }
 
 void ft_test_strdup() {
-	char buff[500];
+	char buff[501];
 	size_t i = 0;
-	ft_bzero(buff, 500);
+	ft_bzero(buff, 501);
 	while (i++ < 500) {
 		buff[i] = (char)('a' + i % 26);
 		char *tmp = ft_strdup(buff);

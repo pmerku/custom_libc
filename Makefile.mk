@@ -30,16 +30,12 @@ CFLAGS			= -Wall -Wextra -Werror
 DFLAGS			= -O3 -g
 NASM			= -f
 
-ifeq ($(OS),Windows_NT)
-	NASM += win64
-else
-	UNAME_S := $(shell uname -s)
-	ifeq ($(UNAME_S),Linux)
-		NASM += elf64
-	endif
-	ifeq ($(UNAME_S),Darwin)
-		NASM += macho64
-	endif
+UNAME_S := $(shell uname -s)
+ifeq ($(UNAME_S),Linux)
+	NASM += elf64
+endif
+ifeq ($(UNAME_S),Darwin)
+	NASM += macho64
 endif
 
 #Sources
@@ -68,7 +64,7 @@ OBJ				:= $(patsubst %.asm,%.o,$(OBJ))
 HEADERS			:= $(addprefix $(INC_DIR)/,$(HEADERS))
 
 #Rules
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re bonus run
 
 all: $(NAME)
 
