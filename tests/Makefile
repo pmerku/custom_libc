@@ -29,6 +29,7 @@ INC_LIBFT		= ../include
 # Sub-modules
 include ft_ctype/ctype.mk
 include ft_libft/libft.mk
+include ft_string/string.mk
 include ft_unistd/unistd.mk
 include	mutantstack/mutantstack.mk
 

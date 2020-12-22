@@ -28,6 +28,8 @@ static struct s_test	g_tests[] = {
 		{.name = "ft_tolower())", .test = &ft_test_tolower},
 		{.name = "ft_toupper())", .test = &ft_test_toupper},
 		{.name = "get_next_line())", .test = &ft_test_gnl},
+		{.name = "ft_strlen()", .test = &ft_test_strlen},
+		{.name = "ft_strdup()", .test = &ft_test_strdup},
 		{.name = "ft_read())", .test = &ft_test_read},
 		{.name = "ft_write())", .test = &ft_test_write},
 		{.name = "MutantStack", .test = &ft_test_mstack},

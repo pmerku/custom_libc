@@ -52,7 +52,6 @@ HEADERS =
 
 #Sub-modules
 include src/ft_ctype/ctype.mk
-#include src/ft_dllist/dllist.mk  	#TODO
 include src/ft_errno/errno.mk
 include src/ft_libft/libft.mk
 include src/ft_llist/llist.mk
@@ -90,7 +89,7 @@ $(OUT_DIR)/%.o: $(SRC_DIR)/%.cpp $(HEADERS)
 $(OUT_DIR)/%.o: $(SRC_DIR)/%.asm $(HEADERS)
 	@echo "$(PREFIX)$(GREEN)Compiling file $(END)$< $(GREEN)to $(END)$@"
 	@mkdir -p $(dir $@)
-	@nasm $(NASM) -o $@ $<
+	@nasm $(NASM) -i$(INC_DIR) -o $@ $<
 
 clean:
 	@echo "$(PREFIX)$(RED)Removing directory $(END)$(OUT_DIR)"
