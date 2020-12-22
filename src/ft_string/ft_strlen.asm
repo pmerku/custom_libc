@@ -20,10 +20,10 @@ FN_LABEL(ft_strlen):
 	mov			rcx,		rdi
 	pxor		xmm0,		xmm0
 
-strlen_loop:
+.loop:
 	add			rax,		16
 	pcmpistri	xmm0,		[rdi + rax],	SSE42_EQUAL_EACH
-	jnz			strlen_loop
+	jnz			.loop
 
 	add			rax,		rcx
 	ret

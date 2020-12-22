@@ -24,7 +24,12 @@
 					jge		%%skip
 					neg		rax
 					push	rax
+					push	rbp
+					mov		rbp, rsp
+					and		rsp, -0x10
 					call	%1 wrt ..plt
+					mov		rsp, rbp
+					pop		rbp
 					pop		qword [rax]
 					mov		rax, -0x1
 				%%skip:
@@ -38,7 +43,12 @@
 				%macro ERRNO_MACRO 1
 					jnc		%%skip
 					push	rax
+					push	rbp
+					mov		rbp, rsp
+					and		rsp, -0x10
 					call	%1
+					mov		rsp, rbp
+					pop		rbp
 					pop		qword [rax]
 					mov		rax, -0x1
 				%%skip:
