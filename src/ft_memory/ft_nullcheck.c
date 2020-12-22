@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include <ft_stdio/ft_printf.h>
+#include <ft_stdio.h>
 
 /*
  * Check if pointer points to allocated memory, exits

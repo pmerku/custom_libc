@@ -31,4 +31,4 @@ STDIO_SOURCES	+= utils/fmt_read.c utils/ft_inner_printf.c utils/ft_lltoa.c \
 STDIO_SOURCES 	:= $(addprefix $(STDIO_DIR)/,$(STDIO_SOURCES))
 
 SRC 	+= $(STDIO_SOURCES)
-HEADERS	+= ft_stdio/ft_printf.h ft_stdio/ft_printf_utils.h
+HEADERS	+= ft_stdio.h ft_stdio/ft_printf_utils.h

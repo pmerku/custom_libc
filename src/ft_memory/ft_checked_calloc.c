@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <ft_memory.h>
-#include <ft_stdio/ft_printf.h>
+#include <ft_stdio.h>
 
 /*
  * Allocate a zeroed array of count * size, exits
