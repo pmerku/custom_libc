@@ -14,6 +14,12 @@
 #include <stddef.h>
 #include <ft_llist.h>
 
+/*
+ * Clears the linked list
+ *
+ * @param  t_llist * pointer to the linked list
+ * @return void
+ */
 void	ft_llist_clear(t_llist *lst) {
 	if (lst == NULL) {
 		return;

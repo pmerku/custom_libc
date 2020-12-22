@@ -34,18 +34,8 @@ void					ft_llist_push_front(t_llist *lst, void *data);
 void					ft_llist_push_back(t_llist *lst, void *data);
 int						ft_llist_size(t_llist *lst);
 t_llist_node			*ft_llist_last(t_llist *lst);
-
-/*
-** FREES the linked list, setting the list to null
-*/
 void					ft_llist_free(t_llist **lst);
-
-/*
-** CLEARS the linked list, not setting the list to null, but removing all
-** entries
-*/
 void					ft_llist_clear(t_llist *lst);
-
 void					ft_llist_iter(t_llist *lst, void (*f)(void *));
 
 #endif

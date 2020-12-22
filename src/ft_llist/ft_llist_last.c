@@ -13,6 +13,12 @@
 #include <stddef.h>
 #include <ft_llist.h>
 
+/*
+ * Get last element in linked list
+ *
+ * @param  t_llist *      pointer to the linked list
+ * @return t_llist_node * pointer to the element in the linked list
+ */
 t_llist_node	*ft_llist_last(t_llist *lst) {
 	if (lst->head == NULL) {
 		return NULL;

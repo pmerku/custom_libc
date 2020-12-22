@@ -14,6 +14,12 @@
 #include <ft_memory.h>
 #include <ft_llist.h>
 
+/*
+ * Free linked list
+ *
+ * @param  t_llist **lst pointer to the linked list
+ * @return void
+ */
 void	ft_llist_free(t_llist **lst)
 {
 	if (*lst == NULL) {
