@@ -98,8 +98,8 @@ fclean: clean
 	@$(MAKE) -C tests fclean
 
 re:
-	@$(MAKE) fclean
-	@$(MAKE) all
+	@$(MAKE) -f Makefile.mk fclean
+	@$(MAKE) -f Makefile.mk all
 
 #Test rules
 $(TEST): $(NAME)

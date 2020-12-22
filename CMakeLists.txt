@@ -8,11 +8,11 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 # C compiler setup
 set(CMAKE_C_STANDARD 99)
-set(CMAKE_C_FLAGS "-Wall -Wextra -Werror -D CMAKE_BUILD=1 -O3")
+set(CMAKE_C_FLAGS "-Wall -Wextra -Werror -O3")
 
 # CPP compiler setup
 set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_FLAGS "-Wall -Wextra -Werror -D CMAKE_BUILD=1 -O3")
+set(CMAKE_CXX_FLAGS "-Wall -Wextra -Werror -O3")
 
 # ASM copiler setup
 enable_language(ASM_NASM)

@@ -60,8 +60,13 @@ tests/test
 tests/out
 out
 .DS_Store
-src/.DS_Store
-src/ft_stdio/.DS_Store
 cmake-build-debug
 cmake-build-wsl
 libft.a
+lib
+bin
+cmake_install.cmake
+CMakeCache.txt
+CMakeFiles
+Makefile
+!tests/Makefile
