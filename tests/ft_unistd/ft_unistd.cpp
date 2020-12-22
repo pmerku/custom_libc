@@ -42,6 +42,7 @@ void	ft_test_read() {
 }
 
 void 	ft_test_write() {
+#ifndef CMAKE_BUILD
 	size_t	i = 0;
 	while (i++ < 10) {
 		std::string arr = "This is a test string!!!\n";
@@ -51,6 +52,7 @@ void 	ft_test_write() {
 		ft_assert(ret1 == ret2);
 		system("rm tests/text");
 	}
+#endif
 	int ret1 = write(FOPEN_MAX + 1, "abcdefghijklmnopqrstuvwxyz\n", 27);
 	std::string str1 = strerror(errno);
 	int ret2 = ft_write(FOPEN_MAX + 1, "abcdefghijklmnopqrstuvwxyz\n\n", 27);

@@ -15,10 +15,12 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <ft_memory.h>
-#include <ft_stdio/ft_printf.h>
-#include <climits>
+#include <ft_stdio.h>
 
 void	ft_test_gnl() {
+#ifdef CMAKE_BUILD
+	return;
+#endif
 	size_t	i = 0;
 	while (i++ < 10) {
 		char *line;
