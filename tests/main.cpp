@@ -32,7 +32,6 @@ static struct s_test	g_tests[] = {
 		{.name = "ft_strdup()", .test = &ft_test_strdup},
 		{.name = "ft_read())", .test = &ft_test_read},
 		{.name = "ft_write())", .test = &ft_test_write},
-		{.name = "MutantStack", .test = &ft_test_mstack},
 		{.name = "", .test = nullptr }
 };
 

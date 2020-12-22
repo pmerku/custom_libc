@@ -54,6 +54,4 @@ void	ft_test_strdup();
 void 	ft_test_read();
 void 	ft_test_write();
 
-void	ft_test_mstack();
-
 #endif
