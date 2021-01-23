@@ -16,21 +16,36 @@
 #include <unistd.h>
 #include <ft_memory.h>
 #include <ft_stdio.h>
+#include <ft_string.h>
+#include <fstream>
 
-void	ft_test_gnl() {
-	size_t	i = 0;
-	while (i++ < 10) {
-		char *line;
-		int fd = open("tests/main.cpp", O_RDONLY);
-		int out = open("tests/text", O_CREAT | O_WRONLY | O_APPEND, 0777);
-		int ret = 1;
-		while ((ret = get_next_line(fd, &line)) > 0) {
-			(ret == 0) ? ft_fprintf(out, "%s", line) : ft_fprintf(out, "%s\n", line);
-			ft_free(line);
-		}
-		close(fd);
-		close(out);
-		int unused __attribute__((unused));
-		unused = system("diff tests/main.cpp tests/text > /dev/null");
+void	test_gnl() {
+	char *line;
+	int fd = open(__FILE__, O_RDONLY);
+	char str[10001];
+	ft_bzero(str, 10001);
+	int offset = 0;
+	while (get_next_line(fd, &line)) {
+		int ret = ft_snprintf(str + offset, sizeof(str) - offset, "%s\n", line);
+		if (ret < 0)
+			break;
+		offset += ret;
+		ft_free(line);
 	}
+	ft_snprintf(str + offset, sizeof(str) - offset, "\n");
+	close(fd);
+	std::ifstream file(__FILE__);
+	std::string s, total;
+	while (!file.eof()) {
+		getline(file, s);
+		total += s + "\n";
+	}
+	file.close();
+	ASSERT_EQUAL(ft_strcmp(str, total.c_str()) == 0);
+}
+
+int main() {
+	for (int i = 0; i < 5; i++)
+		test_gnl();
+	return 0;
 }
