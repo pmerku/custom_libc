@@ -15,18 +15,12 @@ Reimplementation of some C/CPP standard functions and templates
 - `ft_ltoa_base` | `ft_lltoa_base`
 
 ### Building the library
-- Using Cmake:
 ```
-cmake .
-make
-./bin/test
+mkdir cmake
+cmake .. && make
 ```
 
-- Using Make:
-```
-make -f Makefile.mk
-make -f Makefile.mk run
-```
+To test the library run `make test`.
 
 ### Contribute
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
