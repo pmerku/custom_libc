@@ -1,6 +1,6 @@
 ---
 layout: default
-title: ft_stdio/ft_printf
+title: ft_stdio
 parent: Home
 nav_order: 10
 ---
