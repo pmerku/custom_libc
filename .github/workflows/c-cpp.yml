@@ -17,7 +17,7 @@ jobs:
     steps:
     - uses: ilammy/setup-nasm@v1
     - uses: actions/checkout@v1
-    - name: make
+    - name: build
       run: cmake . && make
-    - name: make run
-      run: ./bin/test
+    - name: test
+      run: make test
