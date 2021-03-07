@@ -15,7 +15,8 @@
 
 namespace ft {
 
-	template<typename Key, typename Value> class _pair_base { };
+	template<typename Key, typename Value>
+	class _pair_base { };
 
 	template<typename Key, typename Value>
 	struct pair : private _pair_base<Key, Value> {
@@ -29,7 +30,8 @@ namespace ft {
 
 		pair(const Key &key, const Value &value) : first(key), second(value) { }
 
-		template<typename Key1, typename Key2> pair(const pair<Key1, Key2> &ptr) : first(ptr.first), second(ptr.second) { }
+		template<typename Key1, typename Key2>
+		pair(const pair<Key1, Key2> &ptr) : first(ptr.first), second(ptr.second) { }
 	};
 
 	template<typename Key, typename Value>

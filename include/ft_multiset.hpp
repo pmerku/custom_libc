@@ -55,7 +55,8 @@ namespace ft {
 
 		explicit multiset(const Compare &comp) : tree(comp) { }
 
-		template <typename InputIterator> multiset(InputIterator first, InputIterator last) : tree() {
+		template<typename InputIterator>
+		multiset(InputIterator first, InputIterator last) : tree() {
 			tree._insert_range_equal(first, last);
 		}
 

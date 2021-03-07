@@ -99,13 +99,15 @@ namespace ft {
 
 	} // namespace __base
 
-	template <typename Type> struct ListNode : public __base::ListNodeBase {
+	template<typename Type>
+	struct ListNode : public __base::ListNodeBase {
 		Type data;
 		Type *_valptr() { return ft::addressof(data); }
 		Type const *_valptr() const { return ft::addressof(data); }
 	};
 
-	template <typename Type> struct ListIterator {
+	template<typename Type>
+	struct ListIterator {
 		typedef ListIterator<Type> _Self;
 		typedef ListNode<Type> Node;
 
@@ -151,7 +153,8 @@ namespace ft {
 		__base::ListNodeBase *_node;
 	};
 
-	template <typename Type> struct ListConstIterator {
+	template<typename Type>
+	struct ListConstIterator {
 		typedef ListConstIterator<Type> _Self;
 		typedef const ListNode<Type> Node;
 		typedef ListIterator<Type> iterator;
@@ -199,17 +202,18 @@ namespace ft {
 		const __base::ListNodeBase *_node;
 	};
 
-	template <typename _Val>
+	template<typename _Val>
 	inline bool operator==(const ListIterator<_Val> &x, const ListConstIterator<_Val> &y) {
 		return x._node == y._node;
 	}
 
-	template <typename _Val>
+	template<typename _Val>
 	inline bool operator!=(const ListIterator<_Val> &x, const ListConstIterator<_Val> &y) {
 		return x._node != y._node;
 	}
 
-	template <typename Type, typename Alloc> class ListBase {
+	template<typename Type, typename Alloc>
+	class ListBase {
 	protected:
 		typedef typename alloc_traits<Alloc>::template rebind<Type>::other AllocType;
 		typedef alloc_traits<AllocType> AllocTypeTraits;
@@ -258,7 +262,8 @@ namespace ft {
 		void _init() { this->impl._node._init(); }
 	};
 
-	template <typename Type, typename Alloc = std::allocator<Type> > class list : protected ListBase<Type, Alloc> {
+	template<typename Type, typename Alloc = std::allocator<Type> >
+	class list : protected ListBase<Type, Alloc> {
 		typedef ListBase<Type, Alloc> Base;
 		typedef typename Base::AllocType AllocType;
 		typedef typename Base::AllocTypeTraits AllocTypeTraits;
@@ -318,7 +323,7 @@ namespace ft {
 			_initialize_dispatch(x.begin(), x.end(), false_type());
 		}
 
-		template <typename InputIterator>
+		template<typename InputIterator>
 		list(InputIterator first, InputIterator last, const allocator_type &alloc = allocator_type())
 				: Base(NodeAllocType(alloc)) {
 			typedef typename ft::is_integer<InputIterator>::type Integral;
@@ -328,7 +333,8 @@ namespace ft {
 		list &operator=(const list &x);
 		void assign(size_type num, const value_type &value) { _fill_assign(num, value); }
 
-		template <typename InputIterator> void assign(InputIterator first, InputIterator last) {
+		template<typename InputIterator>
+		void assign(InputIterator first, InputIterator last) {
 			typedef typename ft::is_integer<InputIterator>::type Integral;
 			_assign_dispatch(first, last, Integral());
 		}
@@ -383,7 +389,8 @@ namespace ft {
 			splice(position, tmp);
 		}
 
-		template <typename InputIterator> void insert(iterator position, InputIterator first, InputIterator last) {
+		template<typename InputIterator>
+		void insert(iterator position, InputIterator first, InputIterator last) {
 			list tmp(first, last, get_allocator());
 			splice(position, tmp);
 		}
@@ -459,11 +466,12 @@ namespace ft {
 		remove_return_type sort(StrictWeakOrdering);
 
 	protected:
-		template <typename Integer> void _initialize_dispatch(Integer num, Integer x, true_type) {
+		template<typename Integer>
+		void _initialize_dispatch(Integer num, Integer x, true_type) {
 			_fill_initialize(static_cast<size_type>(num), x);
 		}
 
-		template <typename InputIterator>
+		template<typename InputIterator>
 		void _initialize_dispatch(InputIterator first, InputIterator last, false_type) {
 			for (; first != last; ++first)
 				push_back(*first);
@@ -474,7 +482,8 @@ namespace ft {
 				push_back(x);
 		}
 
-		template <typename Integer> void _assign_dispatch(Integer num, Integer value, true_type) {
+		template<typename Integer>
+		void _assign_dispatch(Integer num, Integer value, true_type) {
 			_fill_assign(num, value);
 		}
 
@@ -549,7 +558,8 @@ namespace ft {
 	template<typename Type, typename Alloc>
 	inline void swap(list<Type, Alloc> &x, list<Type, Alloc> &y) { x.swap(y); }
 
-	template <typename Type, typename Alloc> void ListBase<Type, Alloc>::_clear() {
+	template<typename Type, typename Alloc>
+	void ListBase<Type, Alloc>::_clear() {
 		typedef ListNode<Type> Node;
 		__base::ListNodeBase *current = impl._node.next;
 		while (current != &impl._node) {
@@ -588,7 +598,8 @@ namespace ft {
 		return i;
 	}
 
-	template <typename Type, typename Alloc> void list<Type, Alloc>::resize(size_type new_size, value_type x) {
+	template<typename Type, typename Alloc>
+	void list<Type, Alloc>::resize(size_type new_size, value_type x) {
 		const_iterator i = _resize_pos(new_size);
 
 		if (new_size)
@@ -597,7 +608,8 @@ namespace ft {
 			erase(i._const_cast(), end());
 	}
 
-	template <typename Type, typename Alloc> list<Type, Alloc> &list<Type, Alloc>::operator=(const list &x) {
+	template<typename Type, typename Alloc>
+	list<Type, Alloc> &list<Type, Alloc>::operator=(const list &x) {
 		if (this != &x) {
 			_assign_dispatch(x.begin(), x.end(), false_type());
 		}
@@ -654,11 +666,10 @@ namespace ft {
 		if (extra != last) {
 			_erase(extra);
 		}
-
-		return;
 	}
 
-	template <typename Type, typename Alloc> typename list<Type, Alloc>::remove_return_type list<Type, Alloc>::unique() {
+	template<typename Type, typename Alloc>
+	typename list<Type, Alloc>::remove_return_type list<Type, Alloc>::unique() {
 		iterator first = begin();
 		iterator last = end();
 
@@ -674,11 +685,10 @@ namespace ft {
 				first = next;
 			next = first;
 		}
-
-		return;
 	}
 
-	template <typename Type, typename Alloc> void list<Type, Alloc>::merge(list &x) {
+	template<typename Type, typename Alloc>
+	void list<Type, Alloc>::merge(list &x) {
 		if (this != &x) {
 			iterator first1 = begin();
 			iterator last1 = end();
@@ -744,7 +754,8 @@ namespace ft {
 		}
 	}
 
-	template <typename Type, typename Alloc> void list<Type, Alloc>::sort() {
+	template<typename Type, typename Alloc>
+	void list<Type, Alloc>::sort() {
 		if (this->impl._node.next != &this->impl._node && this->impl._node.next->next != &this->impl._node) {
 			list carry;
 			list tmp[64];
@@ -792,7 +803,6 @@ namespace ft {
 
 			first = next;
 		}
-		return;
 	}
 
 	template<typename Type, typename Alloc>
@@ -813,8 +823,6 @@ namespace ft {
 				first = next;
 			next = first;
 		}
-
-		return;
 	}
 
 	template<typename Type, typename Alloc>

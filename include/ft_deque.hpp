@@ -488,7 +488,8 @@ namespace ft {
 			_fill_insert(ptr_position, num, x);
 		}
 
-		template <typename InputIterator> void insert(iterator ptr_position, InputIterator first, InputIterator last) {
+		template<typename InputIterator>
+		void insert(iterator ptr_position, InputIterator first, InputIterator last) {
 			typedef typename ft::is_integer<InputIterator>::type Integral;
 			_insert_dispatch(ptr_position, first, last, Integral());
 		}

@@ -228,13 +228,17 @@ namespace ft {
 		typedef false_type type;
 	};
 
-	template<bool, typename> struct enable_if { };
+	template<bool, typename>
+	struct enable_if { };
 
-	template<typename Type> struct enable_if<true, Type> { typedef Type type; };
+	template<typename Type>
+	struct enable_if<true, Type> { typedef Type type; };
 
-	template<bool Cond, typename Iftrue, typename Iffalse> struct conditional_type { typedef Iftrue type; };
+	template<bool Cond, typename Iftrue, typename Iffalse>
+	struct conditional_type { typedef Iftrue type; };
 
-	template<typename Iftrue, typename Iffalse> struct conditional_type<false, Iftrue, Iffalse> { typedef Iffalse type; };
+	template<typename Iftrue, typename Iffalse>
+	struct conditional_type<false, Iftrue, Iffalse> { typedef Iffalse type; };
 
 } // namespace ft
 

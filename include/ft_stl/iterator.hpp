@@ -98,8 +98,10 @@ namespace ft {
 		reference operator[](difference_type diff) const { return *(*this + diff); }
 
 	private:
-		template <typename Type> static Type *self_to_pointer(Type *ptr) { return ptr; }
-		template <typename Type> static pointer self_to_pointer(Type iter) { return iter.operator->(); }
+		template<typename Type>
+		static Type *self_to_pointer(Type *ptr) { return ptr; }
+		template<typename Type>
+		static pointer self_to_pointer(Type iter) { return iter.operator->(); }
 	};
 
 	template<typename Iterator>

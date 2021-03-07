@@ -58,7 +58,8 @@ namespace ft {
 		}
 	};
 
-	template <typename Key_compare> struct RedBlackTreeKeyCompare {
+	template<typename Key_compare>
+	struct RedBlackTreeKeyCompare {
 		Key_compare _key_compare;
 
 		RedBlackTreeKeyCompare() : _key_compare() { }
@@ -242,7 +243,8 @@ namespace ft {
 
 			~ReuseOrAllocateNode() { _tree._erase(static_cast<LinkType>(_root)); }
 
-			template <typename Argument> LinkType operator()(const Argument &argument) {
+			template<typename Argument>
+			LinkType operator()(const Argument &argument) {
 				LinkType node = static_cast<LinkType>(_extract());
 				if (node) {
 					_tree._destroy_node(node);
@@ -289,7 +291,8 @@ namespace ft {
 		struct AllocateNode {
 			AllocateNode(RedBlackTree &the_other) : _tree(the_other) {}
 
-			template <typename Argument> LinkType operator()(const Argument &argument) const {
+			template<typename Argument>
+			LinkType operator()(const Argument &argument) const {
 				return _tree._create_node(argument);
 			}
 
