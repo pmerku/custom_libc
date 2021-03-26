@@ -780,7 +780,7 @@ namespace ft {
 				swap(*(fill - 1));
 			} catch (...) {
 				this->splice(this->end(), carry);
-				for (int i = 0; i < sizeof(tmp) / sizeof(tmp[0]); ++i)
+				for (int i = 0; static_cast<size_t>(i) < sizeof(tmp) / sizeof(tmp[0]); ++i)
 					this->splice(this->end(), tmp[i]);
 				throw;
 			}
@@ -852,7 +852,7 @@ namespace ft {
 				swap(*(fill - 1));
 			} catch (...) {
 				this->splice(this->end(), carry);
-				for (int i = 0; i < sizeof(tmp) / sizeof(tmp[0]); ++i)
+				for (int i = 0; static_cast<size_t>(i) < sizeof(tmp) / sizeof(tmp[0]); ++i)
 					this->splice(this->end(), tmp[i]);
 				throw;
 			}

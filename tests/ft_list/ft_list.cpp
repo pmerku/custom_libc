@@ -20,24 +20,28 @@ void test_construct() {
 	ft::list<int> three(two.begin(), two.end());
 	ft::list<int> four(three);
 	ft::list<int> five = four;
+	ft::list<int> six(4);
 
 	ASSERT_THROW(one.size(), size_t(0));
+	one.assign(4, 42);
+	ASSERT_THROW(one.size(), size_t(4));
 	ASSERT_THROW(two.size(), size_t(4));
 	ASSERT_THROW(three.size(), size_t(4));
 	ASSERT_THROW(four.size(), size_t(4));
 	ASSERT_THROW(five.size(), size_t(4));
-	for (int & it : two)
+	ASSERT_THROW(six.size(), size_t(4));
+	for (auto & it : two)
 		ASSERT_EQUAL(it == 42);
 }
 
 void test_access() {
-	ft::list<int> list;
-	list.push_back(10);
-	list.push_back(12);
-	list.push_back(15);
+	ft::list<int> List;
+	List.push_back(10);
+	List.push_back(12);
+	List.push_back(15);
 
-	ASSERT_EQUAL(list.front() == 10);
-	ASSERT_EQUAL(list.back() == 15);
+	ASSERT_EQUAL(List.front() == 10);
+	ASSERT_EQUAL(List.back() == 15);
 }
 
 void test_iterators() {
@@ -197,6 +201,67 @@ void test_operations() {
 		ftList1.merge(ftList3, cmp);
 		ASSERT_THROW(ftList1.size(), size_t(15));
 		ASSERT_EQUAL(ftList1.back() == 42);
+	}
+	{
+		ft::list<int> ftList1(5, 5);
+		ft::list<int> ftList2(5, 42);
+		ft::list<int> ftList3(5, 0);
+
+		ftList1.splice(ftList1.begin(), ftList2);
+		ASSERT_THROW(ftList1.size(), size_t(10));
+		ASSERT_EQUAL(ftList1.front() == 42);
+
+		ft::list<int>::iterator ftIt = ftList3.begin();
+		ft::advance(ftIt, 2);
+		ftList1.splice(ftList1.end(), ftList3, ftIt);
+		ASSERT_THROW(ftList1.size(), size_t(11));
+		ASSERT_EQUAL(ftList1.back() == 0);
+
+		ftList1.splice(ftList1.begin(), ftList3, ftList3.begin(), ftList3.end());
+		ASSERT_THROW(ftList1.size(), size_t(15));
+		ASSERT_EQUAL(ftList1.front() == 0);
+
+		ftList1.push_back(12);
+		ftList1.push_back(13);
+		ftList1.push_back(23);
+		ftList1.push_back(15);
+
+		ftList1.remove(0);
+		ASSERT_THROW(ftList1.size(), size_t(14));
+		ASSERT_EQUAL(ftList1.front() == 42);
+		ASSERT_EQUAL(ftList1.back() == 15);
+
+		ftList1.remove_if(predicate);
+		ASSERT_THROW(ftList1.size(), size_t(8));
+		ASSERT_EQUAL(ftList1.front() == 5);
+		ASSERT_EQUAL(ftList1.back() == 15);
+
+		ftList1.reverse();
+		ASSERT_EQUAL(ftList1.front() == 15);
+		ASSERT_EQUAL(ftList1.back() == 5);
+
+		ftList1.unique();
+		ASSERT_THROW(ftList1.size(), size_t(4));
+		ASSERT_EQUAL(ftList1.front() == 15);
+		ASSERT_EQUAL(ftList1.back() == 5);
+	}
+	{
+		ft::list<int> ftList;
+		for (int i = 5; i > 0; i--) {
+			ftList.push_back(i);
+		}
+		ftList.sort();
+		ASSERT_EQUAL(ftList.front() == 1);
+		ASSERT_EQUAL(ftList.back() == 5);
+	}
+	{
+		ft::list<int> ftList;
+		for (int i = 5; i > 0; i--) {
+			ftList.push_back(i);
+		}
+		ftList.sort(cmp);
+		ASSERT_EQUAL(ftList.front() == 1);
+		ASSERT_EQUAL(ftList.back() == 5);
 	}
 }
 
