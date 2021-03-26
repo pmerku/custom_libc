@@ -23,7 +23,6 @@ if (UNIX)
     set(CMAKE_ASM_NASM_OBJECT_FORMAT elf64)
 elseif (APPLE)
     set(CMAKE_ASM_NASM_OBJECT_FORMAT macho64)
-    set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-DAPPLE=1")
 endif ()
 
 # building static library
